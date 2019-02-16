@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D69D27BC38F82FF749226AD /* Pods_TA_Geni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75399C11812D6430EDC0DB2D /* Pods_TA_Geni.framework */; };
+		A42779272217559D004DE559 /* student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42779262217559D004DE559 /* student.swift */; };
+		A4277929221755BB004DE559 /* courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4277928221755BB004DE559 /* courses.swift */; };
+		A427792F221774DF004DE559 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A427792E221774DF004DE559 /* StudentViewController.swift */; };
 		A463ED422217494A002984B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463ED412217494A002984B7 /* AppDelegate.swift */; };
-		A463ED442217494A002984B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463ED432217494A002984B7 /* ViewController.swift */; };
+		A463ED442217494A002984B7 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463ED432217494A002984B7 /* CourseViewController.swift */; };
 		A463ED472217494A002984B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A463ED452217494A002984B7 /* Main.storyboard */; };
 		A463ED492217494A002984B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A463ED482217494A002984B7 /* Assets.xcassets */; };
 		A463ED4C2217494A002984B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A463ED4A2217494A002984B7 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75399C11812D6430EDC0DB2D /* Pods_TA_Geni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TA_Geni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		880D1317CD66B0418393E707 /* Pods-TA Geni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.release.xcconfig"; path = "Pods/Target Support Files/Pods-TA Geni/Pods-TA Geni.release.xcconfig"; sourceTree = "<group>"; };
+		A42779262217559D004DE559 /* student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = student.swift; sourceTree = "<group>"; };
+		A4277928221755BB004DE559 /* courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courses.swift; sourceTree = "<group>"; };
+		A427792E221774DF004DE559 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		A463ED3E2217494A002984B7 /* TA Geni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TA Geni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A463ED412217494A002984B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A463ED432217494A002984B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A463ED432217494A002984B7 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		A463ED462217494A002984B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A463ED482217494A002984B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A463ED4B2217494A002984B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A463ED4D2217494A002984B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBBE1ADCFAC266CAB124180E /* Pods-TA Geni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TA Geni/Pods-TA Geni.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,63 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D69D27BC38F82FF749226AD /* Pods_TA_Geni.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AA301A64FDBDC3F33A2B8E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75399C11812D6430EDC0DB2D /* Pods_TA_Geni.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4277922221752BA004DE559 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A427792E221774DF004DE559 /* StudentViewController.swift */,
+				A463ED432217494A002984B7 /* CourseViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A42779232217530E004DE559 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				A42779262217559D004DE559 /* student.swift */,
+				A4277928221755BB004DE559 /* courses.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		A427792422175333004DE559 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A463ED452217494A002984B7 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A427792522175372004DE559 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A463ED4A2217494A002984B7 /* LaunchScreen.storyboard */,
+				A463ED482217494A002984B7 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		A463ED352217494A002984B7 = {
 			isa = PBXGroup;
 			children = (
 				A463ED402217494A002984B7 /* TA Geni */,
 				A463ED3F2217494A002984B7 /* Products */,
+				ACBD807DCAD01A6B78AF5ACA /* Pods */,
+				5AA301A64FDBDC3F33A2B8E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +111,22 @@
 			isa = PBXGroup;
 			children = (
 				A463ED412217494A002984B7 /* AppDelegate.swift */,
-				A463ED432217494A002984B7 /* ViewController.swift */,
-				A463ED452217494A002984B7 /* Main.storyboard */,
-				A463ED482217494A002984B7 /* Assets.xcassets */,
-				A463ED4A2217494A002984B7 /* LaunchScreen.storyboard */,
+				A4277922221752BA004DE559 /* Controllers */,
+				A42779232217530E004DE559 /* Data Model */,
+				A427792422175333004DE559 /* Views */,
+				A427792522175372004DE559 /* Supporting Files */,
 				A463ED4D2217494A002984B7 /* Info.plist */,
 			);
 			path = "TA Geni";
+			sourceTree = "<group>";
+		};
+		ACBD807DCAD01A6B78AF5ACA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBBE1ADCFAC266CAB124180E /* Pods-TA Geni.debug.xcconfig */,
+				880D1317CD66B0418393E707 /* Pods-TA Geni.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +136,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A463ED502217494A002984B7 /* Build configuration list for PBXNativeTarget "TA Geni" */;
 			buildPhases = (
+				2B405E9FBF6E1B121A399624 /* [CP] Check Pods Manifest.lock */,
 				A463ED3A2217494A002984B7 /* Sources */,
 				A463ED3B2217494A002984B7 /* Frameworks */,
 				A463ED3C2217494A002984B7 /* Resources */,
+				859EF6926690EFCC51FB7433 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +197,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B405E9FBF6E1B121A399624 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TA Geni-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		859EF6926690EFCC51FB7433 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TA Geni/Pods-TA Geni-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TA Geni/Pods-TA Geni-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A463ED3A2217494A002984B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A463ED442217494A002984B7 /* ViewController.swift in Sources */,
+				A427792F221774DF004DE559 /* StudentViewController.swift in Sources */,
+				A4277929221755BB004DE559 /* courses.swift in Sources */,
+				A463ED442217494A002984B7 /* CourseViewController.swift in Sources */,
 				A463ED422217494A002984B7 /* AppDelegate.swift in Sources */,
+				A42779272217559D004DE559 /* student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +399,7 @@
 		};
 		A463ED512217494A002984B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBBE1ADCFAC266CAB124180E /* Pods-TA Geni.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +418,7 @@
 		};
 		A463ED522217494A002984B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 880D1317CD66B0418393E707 /* Pods-TA Geni.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
