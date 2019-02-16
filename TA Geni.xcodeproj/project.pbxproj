@@ -57,8 +57,8 @@
 		A4277922221752BA004DE559 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A427792E221774DF004DE559 /* StudentViewController.swift */,
 				A463ED432217494A002984B7 /* CourseViewController.swift */,
+				A427792E221774DF004DE559 /* StudentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
