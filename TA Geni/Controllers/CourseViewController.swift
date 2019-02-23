@@ -8,9 +8,11 @@
 
 import UIKit
 import RealmSwift
+import ChameleonFramework
 
 
-class CourseListViewController: UITableViewController {
+
+class CourseListViewController: SwipeTableViewController {
 
     let realm = try! Realm()
     
@@ -23,18 +25,33 @@ class CourseListViewController: UITableViewController {
         loadCourse()
     }
     
+ 
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        loadCourse()
+        
+    }
     //MARK -- TableView Datasource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courseArray?.count ?? 1
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
-        cell.textLabel?.text = courseArray?[indexPath.row].name ?? "No Courses Added Yet."
+        if let course = courseArray?[indexPath.row]{
+            
+            cell.textLabel?.text = course.name
+            
+            guard let courseColor = UIColor(hexString: course.Color) else {fatalError()}
+            
+            cell.backgroundColor = courseColor
+            
+            cell.textLabel?.textColor =  ContrastColorOf(courseColor, returnFlat: true)
+            
+        }
         
         return cell
         
@@ -81,7 +98,22 @@ class CourseListViewController: UITableViewController {
         tableView.reloadData()
     }
     
-
+    //    MARK: - Delete Data From Swipe
+    
+    override func updateModel(at indexPath: IndexPath) {
+        
+        if let courseForDeletion = self.courseArray?[indexPath.row]{
+            
+            do{
+                try self.realm.write {
+                    self.realm.delete(courseForDeletion)
+                }
+            } catch {
+                print("Error deleting course, \(error)")
+            }
+        }
+    }
+    
       //MARK -- Add New Categories
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -94,6 +126,7 @@ class CourseListViewController: UITableViewController {
             
             let newCourse = Course()
             newCourse.name = textField.text!
+            newCourse.Color = UIColor.randomFlat.hexValue()
             
             self.save(course: newCourse)
             
