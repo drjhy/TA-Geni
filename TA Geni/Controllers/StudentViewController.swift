@@ -14,9 +14,13 @@ import ChameleonFramework
 
 class StudentViewController: SwipeTableViewController {
 
+    
     let realm = try! Realm()
     
     var students: Results<Student>?
+    
+//    var selectedCategory: Category!
+    
     
     var selectedCourse : Course?{
         
@@ -78,10 +82,8 @@ class StudentViewController: SwipeTableViewController {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         if let student = students?[indexPath.row] {
-            
+        
             cell.textLabel?.text = student.name
-            cell.textLabel?.text = student.score
-            cell.textLabel?.text = student.tag
             
             if let studentColor = UIColor(hexString: selectedCourse!.Color)?.darken(byPercentage: (CGFloat(indexPath.row))/(CGFloat(students!.count))){
                 
@@ -89,7 +91,7 @@ class StudentViewController: SwipeTableViewController {
                 cell.textLabel?.textColor = ContrastColorOf(studentColor, returnFlat: true)
                 cell.accessoryType = .detailDisclosureButton
             }
-            
+       
         } else {
             
             cell.textLabel?.text = "No Students Added..."
@@ -100,48 +102,26 @@ class StudentViewController: SwipeTableViewController {
     }
     // MARK - Tableview Delegate Methods
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        if let student = students? [indexPath.row] {
-//
-//            do {
-//                try realm.write {
-//                    student.score = student.score
-//                }
-//
-//            } catch {
-//                print("Error saving score status, \(error)")
-//            }
-//        }
-//
-//        tableView.reloadData()
-//
-//        tableView.deselectRow(at: indexPath, animated: true)
-//
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-    func recordScore(at indexPath: IndexPath) {
-        
-        let textField = UITextField()
-        
-        if self.students != nil {
-            
+         
+        if let student = students? [indexPath.row] {
+
             do {
-                try self.realm.write {
-                    let  newStudent  = Student()
-                    newStudent.score = textField.text!
+                try realm.write {
+                    student.score = "0"
                 }
+
             } catch {
-                print("Error saving context \(error)")
+                print("Error saving score status, \(error)")
             }
-            self.tableView.reloadData()
         }
-    
+
         tableView.reloadData()
+
         tableView.deselectRow(at: indexPath, animated: true)
+
     }
-    
-    
     
     
     override func updateModel(at indexPath: IndexPath) {
@@ -168,7 +148,7 @@ class StudentViewController: SwipeTableViewController {
             
     let alert = UIAlertController(title: "Add New Student", message: "", preferredStyle: .alert)
             
-            let  action = UIAlertAction(title: "Add Student", style: .default) { (action) in
+            let  action = UIAlertAction(title: "Add", style: .default) { (action) in
                 
                 
                 if let currentCourse = self.selectedCourse {
@@ -178,8 +158,6 @@ class StudentViewController: SwipeTableViewController {
                             
                             let  newStudent  = Student()
                             newStudent.name = textField.text!
-                            newStudent.score = textField.text!
-                            newStudent.tag = textField.text!
                             newStudent.dateCreated = Date()
                             currentCourse.students.append(newStudent)
                         }
@@ -198,7 +176,15 @@ class StudentViewController: SwipeTableViewController {
             
             alert.addAction(action)
             
-            self.present(alert, animated: true, completion: nil)
+        // Cancel button
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction!) in
+            print("Cancel button tapped");
+        }
+        alert.addAction(cancelAction)
+        
+        // Present Dialog message
+        present(alert, animated: true, completion:nil)
+        
         }
         
         func loadStudents() {
@@ -231,21 +217,38 @@ class StudentViewController: SwipeTableViewController {
 
 
     let action1 = UIAlertAction(title: "Actively and Regularly", style: .default, handler: { (action) -> Void in
-    
-        self.recordScore(at: IndexPath.init())
         
-        print("ACTION 11 selected!")
-    })
+        let realm = try! Realm()
+        let theStudent = realm.objects(Student.self).first
+        try! realm.write {
+            theStudent?.score = "5"
+        }
+        })
 
     let action2 = UIAlertAction(title: "Voluntarily", style: .default, handler: { (action) -> Void in
-    print("ACTION 2 selected!")
+        
+        let realm = try! Realm()
+        let theStudent = realm.objects(Student.self).first
+        try! realm.write {
+            theStudent?.score = "3"
+        }
     })
 
     let action3 = UIAlertAction(title: "Few", style: .default, handler: { (action) -> Void in
-    print("ACTION 3 selected!")
+        
+        let realm = try! Realm()
+        let theStudent = realm.objects(Student.self).first
+        try! realm.write {
+            theStudent?.score = "2"
+        }
     })
     let action4 = UIAlertAction(title: "Absent or Does Not", style: .default, handler: { (action) -> Void in
-    print("ACTION 4 selected!")
+        
+        let realm = try! Realm()
+        let theStudent = realm.objects(Student.self).first
+        try! realm.write {
+            theStudent?.score = "0"
+        }
     })
 
     // Cancel button
@@ -294,7 +297,6 @@ class StudentViewController: SwipeTableViewController {
                 }
             }
         }
-
 }
 
 //// Helper function inserted by Swift 4.2 migrator.

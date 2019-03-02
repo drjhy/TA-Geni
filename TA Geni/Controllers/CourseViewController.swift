@@ -96,6 +96,7 @@ class CourseListViewController: SwipeTableViewController {
         courseArray = realm.objects(Course.self)
         
         tableView.reloadData()
+       
     }
     
     //    MARK: - Delete Data From Swipe
@@ -122,7 +123,7 @@ class CourseListViewController: SwipeTableViewController {
         
         let alert = UIAlertController(title: "Add New Course", message: "", preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Add Course", style: .default) { (action) in
+        let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
             let newCourse = Course()
             newCourse.name = textField.text!
@@ -138,7 +139,15 @@ class CourseListViewController: SwipeTableViewController {
         
         alert.addAction(action)
         
-        present(alert, animated: true, completion: nil)
+        // Cancel button
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction!) in
+            print("Cancel button tapped");
+        }
+        alert.addAction(cancelAction)
+        
+        // Present Dialog message
+        present(alert, animated: true, completion:nil)
+        
         
     }
     

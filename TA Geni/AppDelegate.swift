@@ -11,13 +11,14 @@ import RealmSwift
 
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
+//        print(Realm.Configuration.defaultConfiguration.fileURL)
         
         do{
             _ = try Realm()
@@ -26,8 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             print("Error initialisng new realm, \(error)")
         }
-        
-        
         
         return true
     }

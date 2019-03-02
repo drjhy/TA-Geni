@@ -11,9 +11,10 @@ import RealmSwift
 
 class Student: Object {
     @objc dynamic var name: String = ""
-    @objc dynamic var score: String = ""
-    @objc dynamic var tag: String = ""
+    @objc dynamic var score: String = "0"
     @objc dynamic var dateCreated: Date?
     
-    var  parentCourse = LinkingObjects(fromType: Course.self, property: "students")
+    
+    let  parentCourse = LinkingObjects(fromType: Course.self, property: "students")
 }
+
