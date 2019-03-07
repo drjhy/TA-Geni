@@ -19,7 +19,7 @@ class StudentViewController: SwipeTableViewController {
     
     var students: Results<Student>?
     
-//    var selectedCategory: Category!
+    var selectedStudent: Student?
     
     
     var selectedCourse : Course?{
@@ -104,7 +104,7 @@ class StudentViewController: SwipeTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-         
+        
         if let student = students? [indexPath.row] {
 
             do {
@@ -157,9 +157,11 @@ class StudentViewController: SwipeTableViewController {
                         try self.realm.write {
                             
                             let  newStudent  = Student()
+                            
                             newStudent.name = textField.text!
                             newStudent.dateCreated = Date()
-                            currentCourse.students.append(newStudent)
+                            newStudent.studentCourseName = (self.selectedCourse?.name)!
+                            currentCourse.studentList.append(newStudent)
                         }
                     } catch {
                         print("Error saving context \(error)")
@@ -189,7 +191,7 @@ class StudentViewController: SwipeTableViewController {
         
         func loadStudents() {
             
-            students = selectedCourse?.students.sorted(byKeyPath: "name", ascending: true)
+            students = selectedCourse?.studentList.sorted(byKeyPath: "name", ascending: true)
             
             tableView.reloadData()
         }

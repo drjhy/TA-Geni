@@ -20,17 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        print(Realm.Configuration.defaultConfiguration.fileURL)
         
-        do{
-            _ = try Realm()
+        let config = Realm.Configuration(schemaVersion: 1, migrationBlock: { migration, oldSchemaVersion in
             
-        } catch {
-            
-            print("Error initialisng new realm, \(error)")
-        }
+            if (oldSchemaVersion < 1) {
+            }
+        })
+        
+        Realm.Configuration.defaultConfiguration = config
+        
+        _ = try! Realm()
+        
         
         return true
     }
-
 
 }
 

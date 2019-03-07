@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TA Geni/Controllers/StudentViewController.swift"
-            timestampString = "573196913.524732"
+            timestampString = "573661306.183266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "convertFromNSAttributedStringKey(_:)"
             landmarkType = "9">
          </BreakpointContent>
