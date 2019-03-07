@@ -201,6 +201,9 @@ class StudentViewController: SwipeTableViewController {
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
+        
+        
+        
         fireAlert(_sender: indexPath.row)
     }
     
@@ -222,6 +225,7 @@ class StudentViewController: SwipeTableViewController {
         
         let realm = try! Realm()
         let theStudent = realm.objects(Student.self).first
+    
         try! realm.write {
             theStudent?.score = "5"
         }
