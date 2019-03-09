@@ -11,7 +11,7 @@ import RealmSwift
 class StudentListViewController: UITableViewController {
 
 
-
+    var selectedCourse : Course?
 
     var Name = [String]()
     var Score = [String]()

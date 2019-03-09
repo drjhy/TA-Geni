@@ -201,14 +201,20 @@ class StudentViewController: SwipeTableViewController {
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
+        if let studentForRubric = self.students?[indexPath.row].studentID{
         
+//            print(self.students?[indexPath.row].studentID as Any)
+            
+//            print(studentForRubric)
         
-        
-        fireAlert(_sender: indexPath.row)
-    }
+            fireAlert(studentID: studentForRubric as AnyObject)
+        }}
     
-    @IBAction func fireAlert(_sender: Any) {
-            let alert = UIAlertController(title: "",
+    @IBAction func fireAlert(studentID: AnyObject) {
+        
+        let id = String(describing: studentID)
+        
+        let alert = UIAlertController(title: "",
                                           message: "",
                                           preferredStyle: .alert)
 
@@ -222,36 +228,35 @@ class StudentViewController: SwipeTableViewController {
 
 
     let action1 = UIAlertAction(title: "Actively and Regularly", style: .default, handler: { (action) -> Void in
-        
         let realm = try! Realm()
-        let theStudent = realm.objects(Student.self).first
-    
+        let predicate = NSPredicate(format: "studentID == %@", id)
+        let theStudent = realm.objects(Student.self).filter(predicate).first
         try! realm.write {
             theStudent?.score = "5"
         }
         })
 
     let action2 = UIAlertAction(title: "Voluntarily", style: .default, handler: { (action) -> Void in
-        
         let realm = try! Realm()
-        let theStudent = realm.objects(Student.self).first
+        let predicate = NSPredicate(format: "studentID == %@", id)
+        let theStudent = realm.objects(Student.self).filter(predicate).first
         try! realm.write {
             theStudent?.score = "3"
         }
     })
 
     let action3 = UIAlertAction(title: "Few", style: .default, handler: { (action) -> Void in
-        
         let realm = try! Realm()
-        let theStudent = realm.objects(Student.self).first
+        let predicate = NSPredicate(format: "studentID == %@", id)
+        let theStudent = realm.objects(Student.self).filter(predicate).first
         try! realm.write {
             theStudent?.score = "2"
         }
     })
     let action4 = UIAlertAction(title: "Absent or Does Not", style: .default, handler: { (action) -> Void in
-        
         let realm = try! Realm()
-        let theStudent = realm.objects(Student.self).first
+        let predicate = NSPredicate(format: "studentID == %@", id)
+        let theStudent = realm.objects(Student.self).filter(predicate).first
         try! realm.write {
             theStudent?.score = "0"
         }
@@ -274,7 +279,7 @@ class StudentViewController: SwipeTableViewController {
     alert.addAction(cancel)
     present(alert, animated: true, completion: nil)
     }
-
+    
 
 
     override func didReceiveMemoryWarning() {
