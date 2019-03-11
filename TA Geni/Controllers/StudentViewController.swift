@@ -111,28 +111,6 @@ class StudentViewController: SwipeTableViewController {
     
     // MARK - Tableview Delegate Methods
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//
-//        if let student = students? [indexPath.row] {
-//
-//            do {
-//                try realm.write {
-//                    student.score = "0"
-//                }
-//
-//            } catch {
-//                print("Error saving score status, \(error)")
-//            }
-//        }
-//
-//        tableView.reloadData()
-//
-//        tableView.deselectRow(at: indexPath, animated: true)
-//
-//    }
-    
-    
     override func updateModel(at indexPath: IndexPath) {
         
         if let studentForDeletion = self.students?[indexPath.row]{
@@ -211,10 +189,6 @@ class StudentViewController: SwipeTableViewController {
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         
         if let studentForRubric = self.students?[indexPath.row].studentID{
-        
-//            print(self.students?[indexPath.row].studentID as Any)
-            
-//            print(studentForRubric)
         
             fireAlert(studentID: studentForRubric as AnyObject)
         }}

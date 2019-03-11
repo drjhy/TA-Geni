@@ -41,26 +41,18 @@ class StudentListViewController: UITableViewController {
     }
 
     func queryStudents(){
-     
-        print(self.selectedCourse?.name as Any)
-//        let realm = try! Realm()
 
         let allStudents = realm.objects(Student.self).filter("studentCourseName == %@", self.selectedCourse?.name as Any)
         
-
+        let byStudent = allStudents.sorted(byKeyPath: "name", ascending: true)
         
-        let byStudent = allStudents.sorted(byKeyPath: "name", ascending: false)
-        
-       
-
         for student in byStudent{
             Name.append(student.name)
             Score.append(student.score)
-            print("\(student.name) is \(student.score) class participation")
+//            print("\(student.name) is \(student.score) class participation")
             
             tableView.reloadData()
             }
-        
     }
 
 
