@@ -100,28 +100,37 @@ class StudentViewController: SwipeTableViewController {
         
         return cell
     }
+ 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "reuseIdentifier" {
+        
+                let controller = segue.destination as! StudentListViewController
+                controller.selectedCourse = self.selectedCourse
+            }
+    }
+    
     // MARK - Tableview Delegate Methods
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        
-        if let student = students? [indexPath.row] {
-
-            do {
-                try realm.write {
-                    student.score = "0"
-                }
-
-            } catch {
-                print("Error saving score status, \(error)")
-            }
-        }
-
-        tableView.reloadData()
-
-        tableView.deselectRow(at: indexPath, animated: true)
-
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//
+//        if let student = students? [indexPath.row] {
+//
+//            do {
+//                try realm.write {
+//                    student.score = "0"
+//                }
+//
+//            } catch {
+//                print("Error saving score status, \(error)")
+//            }
+//        }
+//
+//        tableView.reloadData()
+//
+//        tableView.deselectRow(at: indexPath, animated: true)
+//
+//    }
     
     
     override func updateModel(at indexPath: IndexPath) {

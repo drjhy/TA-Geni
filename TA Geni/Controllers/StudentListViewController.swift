@@ -7,14 +7,19 @@
 
 import UIKit
 import RealmSwift
+import ChameleonFramework
 
 class StudentListViewController: UITableViewController {
 
+    let realm = try! Realm()
+    
+    var students: Results<Student>?
 
     var selectedCourse : Course?
 
     var Name = [String]()
     var Score = [String]()
+    var tableCourse = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,31 +41,40 @@ class StudentListViewController: UITableViewController {
     }
 
     func queryStudents(){
-        let realm = try! Realm()
+     
+        print(self.selectedCourse?.name as Any)
+//        let realm = try! Realm()
 
-        let allStudents = realm.objects(Student.self)
+        let allStudents = realm.objects(Student.self).filter("studentCourseName == %@", self.selectedCourse?.name as Any)
+        
 
+        
         let byStudent = allStudents.sorted(byKeyPath: "name", ascending: false)
+        
+       
 
         for student in byStudent{
             Name.append(student.name)
             Score.append(student.score)
             print("\(student.name) is \(student.score) class participation")
-
+            
             tableView.reloadData()
-        }
-
+            }
+        
     }
 
 
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell : StudentListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! StudentListTableViewCell
 
+   
+    
     cell.nameLabel.text = Name[indexPath.row]
     cell.scoreLabel.text = Score[indexPath.row]
 
-//         Configure the cell...
 
+//         Configure the cell...
+    
         return cell
     }
 
