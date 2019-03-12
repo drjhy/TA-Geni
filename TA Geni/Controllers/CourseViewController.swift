@@ -10,10 +10,18 @@ import UIKit
 import RealmSwift
 import ChameleonFramework
 
+var colorCount = 0
+var color: UIColor = .red
+
+
 
 
 class CourseListViewController: SwipeTableViewController {
+    
 
+    
+    
+    
     let realm = try! Realm()
     
     var courseArray: Results<Course>?
@@ -22,9 +30,17 @@ class CourseListViewController: SwipeTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        addNavBarImage()
+        
+        tableView.separatorStyle = .none
+        
         loadCourse()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        loadCourse()
+    }
  
     override func viewWillDisappear(_ animated: Bool) {
         
@@ -118,7 +134,13 @@ class CourseListViewController: SwipeTableViewController {
       //MARK -- Add New Categories
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-    
+
+        
+        
+        
+        
+        
+        
         var textField = UITextField()
         
         let alert = UIAlertController(title: "Add New Course", message: "", preferredStyle: .alert)
@@ -127,7 +149,7 @@ class CourseListViewController: SwipeTableViewController {
             
             let newCourse = Course()
             newCourse.name = textField.text!
-            newCourse.Color = UIColor.randomFlat.hexValue()
+            newCourse.Color = self.setColorCode(rowColorSet: color as UIColor).hexValue()
             
             self.save(course: newCourse)
             
@@ -150,6 +172,54 @@ class CourseListViewController: SwipeTableViewController {
         
         
     }
+    func setColorCode(rowColorSet: UIColor) -> UIColor{
+        
+        let color1  = UIColor(red:0.51, green:0.53, blue:0.84, alpha:1.0)
+        let color2 = UIColor(red:0.78, green:0.80, blue:0.94, alpha:1.0)
+        let color3 = UIColor(red:0.89, green:0.91, blue:0.95, alpha:1.0)
+        
+        if colorCount == 0 {
+            colorCount = 1
+            color = color1
+            return color
+        } else if colorCount == 1 {
+            colorCount = 2
+            color = color2
+            return color
+        } else {
+            colorCount = 0
+            color = color3
+            return color
+        }
+        
+    }
+  
+    func addNavBarImage() {
+        
+        let navController = navigationController!
+        
+    
+        
+        let image = UIImage(named: "Logo.png") //Your logo url here
+        let imageView = UIImageView(image: image)
+        
+        self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: 350, height: 90.0)
+
+        
+        let bannerWidth = navController.navigationBar.frame.size.width
+        let bannerHeight = navController.navigationBar.frame.size.height
+        
+        let bannerX = bannerWidth / 2 - (image?.size.width)! / 2
+        let bannerY = bannerHeight / 2 - (image?.size.height)! / 2
+        
+        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
+        imageView.contentMode = .scaleAspectFit
+        
+        navigationItem.titleView = imageView
+    }
+    
+    
+    
     
     
 }

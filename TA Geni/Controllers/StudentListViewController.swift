@@ -23,7 +23,11 @@ class StudentListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
+        tableView.separatorColor = UIColor.flatPurple
+        
         queryStudents()
 
     }

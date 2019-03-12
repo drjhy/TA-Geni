@@ -50,7 +50,7 @@ class StudentViewController: SwipeTableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         
-        updateNavBar(withHexCode: "1D9BF6")
+        updateNavBar(withHexCode: "494ca2")
     }
     
     //    MARK: -  Nav Bar Setup Methods
