@@ -37,6 +37,16 @@ class StudentViewController: SwipeTableViewController {
         
         tableView.separatorStyle = .none
     
+        let color = UIColor.white
+        let font = UIFont(name: "HelveticaNeue-Medium", size: 18)!
+        
+        let attributes = [
+            NSAttributedString.Key.font: font,
+            NSAttributedString.Key.foregroundColor: color
+        ]
+        
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +75,7 @@ class StudentViewController: SwipeTableViewController {
         
         navBar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)
         
-        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: ContrastColorOf(navBarColor, returnFlat: true)]
+        navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ContrastColorOf(navBarColor, returnFlat: true)]
         
         searchBar.barTintColor = navBarColor
         
@@ -273,17 +283,22 @@ class StudentViewController: SwipeTableViewController {
 }
     // MARK -- Search bar methods
     
-    extension StudentViewController: UISearchBarDelegate {
-        
-        func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+extension StudentViewController: UISearchBarDelegate {
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            
+    
+            print("Step 1")
             
             students = students?.filter("name CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
             
             tableView.reloadData()
         }
         
-        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            if searchBar.text?.count == 0 {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        print("Step 0")
+        
+        if searchBar.text?.count == 0 {
                 loadStudents()
                 
                 DispatchQueue.main.async {

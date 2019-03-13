@@ -13,14 +13,7 @@ import ChameleonFramework
 var colorCount = 0
 var color: UIColor = .red
 
-
-
-
 class CourseListViewController: SwipeTableViewController {
-    
-
-    
-    
     
     let realm = try! Realm()
     
@@ -135,12 +128,6 @@ class CourseListViewController: SwipeTableViewController {
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
 
-        
-        
-        
-        
-        
-        
         var textField = UITextField()
         
         let alert = UIAlertController(title: "Add New Course", message: "", preferredStyle: .alert)
@@ -174,7 +161,7 @@ class CourseListViewController: SwipeTableViewController {
     }
     func setColorCode(rowColorSet: UIColor) -> UIColor{
         
-        let color1  = UIColor(red:0.51, green:0.53, blue:0.84, alpha:1.0)
+        let color1 = UIColor(red:0.51, green:0.53, blue:0.84, alpha:1.0)
         let color2 = UIColor(red:0.78, green:0.80, blue:0.94, alpha:1.0)
         let color3 = UIColor(red:0.89, green:0.91, blue:0.95, alpha:1.0)
         
@@ -203,7 +190,7 @@ class CourseListViewController: SwipeTableViewController {
         let image = UIImage(named: "Logo.png") //Your logo url here
         let imageView = UIImageView(image: image)
         
-        self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: 350, height: 90.0)
+//        self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: 350, height: 90.0)
 
         
         let bannerWidth = navController.navigationBar.frame.size.width

@@ -28,7 +28,7 @@
 		A41DEDBA2228BC4700A3EDC1 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudentListViewController.swift; path = "/Users/johnyoung/Desktop/TA Geni/TA Geni/Controllers/StudentListViewController.swift"; sourceTree = "<absolute>"; };
 		A42779262217559D004DE559 /* student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = student.swift; sourceTree = "<group>"; };
 		A4277928221755BB004DE559 /* courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courses.swift; sourceTree = "<group>"; };
-		A427792E221774DF004DE559 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudentViewController.swift; path = "/Users/johnyoung/Desktop/TA Geni/TA Geni/Controllers/StudentViewController.swift"; sourceTree = "<absolute>"; };
+		A427792E221774DF004DE559 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		A43F9A4C221AFEE100E37293 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		A463ED3E2217494A002984B7 /* TA Geni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TA Geni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A463ED412217494A002984B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
