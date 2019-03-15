@@ -28,20 +28,23 @@ class StudentViewController: SwipeTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.separatorStyle = .none
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = selectedCourse?.name
-        tableView.separatorStyle = .none
-        guard let colourHex = selectedCourse?.Color else {   fatalError()}
-        updateNavBar(withHexCode: colourHex)
+        setUpNavBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setUpNavBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        updateNavBar(withHexCode: "494ca2")
+//        updateNavBar(withHexCode: "494ca2")
+        super.viewWillDisappear(animated)
+        setUpNavBar()
     }
     
     //    MARK: -  Nav Bar Setup Methods
@@ -258,6 +261,15 @@ class StudentViewController: SwipeTableViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
     }
+  
+    func setUpNavBar(){
+        title = selectedCourse?.name
+        tableView.separatorStyle = .none
+        guard let colourHex = selectedCourse?.Color else {   fatalError()}
+        updateNavBar(withHexCode: colourHex)
+    }
+    
+    
     
 }
 

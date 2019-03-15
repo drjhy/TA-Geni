@@ -186,7 +186,7 @@ class CourseListViewController: SwipeTableViewController {
     
     func setBackgroudNav(){
         
-        navigationController?.navigationBar.barTintColor = UIColor.flatPurple
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.29, green:0.30, blue:0.64, alpha:1.0)
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         addNavBarImage()
         loadCourse()

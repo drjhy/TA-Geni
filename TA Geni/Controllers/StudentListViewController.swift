@@ -12,9 +12,7 @@ import ChameleonFramework
 class StudentListViewController: UITableViewController {
 
     let realm = try! Realm()
-    
     var students: Results<Student>?
-
     var selectedCourse : Course?
 
     var Name = [String]()
@@ -62,14 +60,9 @@ class StudentListViewController: UITableViewController {
 
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell : StudentListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! StudentListTableViewCell
-
-   
     
     cell.nameLabel.text = Name[indexPath.row]
     cell.scoreLabel.text = Score[indexPath.row]
-
-
-//         Configure the cell...
     
         return cell
     }
