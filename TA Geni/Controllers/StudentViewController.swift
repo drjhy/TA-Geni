@@ -16,16 +16,10 @@ class StudentViewController: SwipeTableViewController {
 
     
     let realm = try! Realm()
-    
     var students: Results<Student>?
-    
     var selectedStudent: Student?
-    
-    
     var selectedCourse : Course?{
-        
         didSet{
-            
             loadStudents()
         }
     }
@@ -36,30 +30,17 @@ class StudentViewController: SwipeTableViewController {
         super.viewDidLoad()
         
         tableView.separatorStyle = .none
-    
-        let color = UIColor.white
-        let font = UIFont(name: "HelveticaNeue-Medium", size: 18)!
-        
-        let attributes = [
-            NSAttributedString.Key.font: font,
-            NSAttributedString.Key.foregroundColor: color
-        ]
-        
-        UINavigationBar.appearance().titleTextAttributes = attributes
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
         title = selectedCourse?.name
-        
+        tableView.separatorStyle = .none
         guard let colourHex = selectedCourse?.Color else {   fatalError()}
-        
         updateNavBar(withHexCode: colourHex)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        
         updateNavBar(withHexCode: "494ca2")
     }
     
@@ -273,30 +254,22 @@ class StudentViewController: SwipeTableViewController {
     present(alert, animated: true, completion: nil)
     }
     
-
-
     override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
     }
-
+    
 }
+
     // MARK -- Search bar methods
     
 extension StudentViewController: UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-            
-    
-            print("Step 1")
-            
             students = students?.filter("name CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
-            
             tableView.reloadData()
         }
         
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        print("Step 0")
         
         if searchBar.text?.count == 0 {
                 loadStudents()

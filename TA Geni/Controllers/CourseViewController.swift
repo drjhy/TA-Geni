@@ -11,35 +11,33 @@ import RealmSwift
 import ChameleonFramework
 
 var colorCount = 0
-var color: UIColor = .red
+var color: UIColor = .clear
 
 class CourseListViewController: SwipeTableViewController {
     
     let realm = try! Realm()
-    
     var courseArray: Results<Course>?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        addNavBarImage()
-        
-        tableView.separatorStyle = .none
-        
-        loadCourse()
+        setBackgroudNav()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        loadCourse()
+        super.viewWillAppear(animated)
+        setBackgroudNav()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setBackgroudNav()
     }
  
     override func viewWillDisappear(_ animated: Bool) {
-        
-        loadCourse()
-        
+        super.viewWillDisappear(animated)
+        setBackgroudNav()
     }
+    
     //MARK -- TableView Datasource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,28 +47,19 @@ class CourseListViewController: SwipeTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        
         if let course = courseArray?[indexPath.row]{
-            
             cell.textLabel?.text = course.name
-            
             guard let courseColor = UIColor(hexString: course.Color) else {fatalError()}
-            
             cell.backgroundColor = courseColor
-            
             cell.textLabel?.textColor =  ContrastColorOf(courseColor, returnFlat: true)
-            
         }
-        
         return cell
-        
     }
     
     
     //MARK -- TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         performSegue(withIdentifier: "goToStudent", sender: self)
     }
     
@@ -85,27 +74,19 @@ class CourseListViewController: SwipeTableViewController {
     //MARK -- Data Manipulation Methods
     
     func save(course: Course) {
-        
         do {
-            
             try realm.write {
                 realm.add(course)
             }
-            
         } catch {
-            
             print("Error saving context \(error)")
         }
-        
         self.tableView.reloadData()
     }
     
     func loadCourse () {
-        
         courseArray = realm.objects(Course.self)
-        
         tableView.reloadData()
-       
     }
     
     //    MARK: - Delete Data From Swipe
@@ -156,9 +137,10 @@ class CourseListViewController: SwipeTableViewController {
         
         // Present Dialog message
         present(alert, animated: true, completion:nil)
-        
-        
     }
+    
+//    MARK - Set color cells for New Courses added.
+    
     func setColorCode(rowColorSet: UIColor) -> UIColor{
         
         let color1 = UIColor(red:0.51, green:0.53, blue:0.84, alpha:1.0)
@@ -185,13 +167,8 @@ class CourseListViewController: SwipeTableViewController {
         
         let navController = navigationController!
         
-    
-        
         let image = UIImage(named: "Logo.png") //Your logo url here
         let imageView = UIImageView(image: image)
-        
-//        self.navigationController!.navigationBar.frame = CGRect(x: 0, y: 0, width: 350, height: 90.0)
-
         
         let bannerWidth = navController.navigationBar.frame.size.width
         let bannerHeight = navController.navigationBar.frame.size.height
@@ -205,7 +182,16 @@ class CourseListViewController: SwipeTableViewController {
         navigationItem.titleView = imageView
     }
     
+//    MARK - Setup navigation Bar
     
+    func setBackgroudNav(){
+        
+        navigationController?.navigationBar.barTintColor = UIColor.flatPurple
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        addNavBarImage()
+        loadCourse()
+        tableView.separatorStyle = .none
+    }
     
     
     

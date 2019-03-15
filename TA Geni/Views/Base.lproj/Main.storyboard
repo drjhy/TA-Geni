@@ -17,6 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.67450980392156867" green="0.85882352941176465" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.28627450980000002" green="0.29803921570000003" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="32" id="tX5-JL-nzE" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
                                 <rect key="frame" x="0.0" y="28" width="375" height="32"/>
@@ -89,7 +90,7 @@
                                     <action selector="addButtonPressed:" destination="Hpo-UK-O6r" id="Ka8-dJ-Cj8"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Score" id="P2w-EG-JrN">
+                            <barButtonItem title="Scores" id="P2w-EG-JrN">
                                 <connections>
                                     <segue destination="mwM-p2-6rr" kind="show" identifier="reuseIdentifier" id="yfw-J6-YIp"/>
                                 </connections>
@@ -102,7 +103,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDU-ZK-EZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3007" y="-1727"/>
+            <point key="canvasLocation" x="2535" y="-1603"/>
         </scene>
         <!--Student Scores-->
         <scene sceneID="WWz-3a-cTc">
@@ -112,7 +113,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="L1T-Ht-qGD" customClass="StudentListTableViewCell" customModule="TA_Geni" propertyAccessControl="none">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -160,25 +160,29 @@
                             <outlet property="delegate" destination="mwM-p2-6rr" id="K3k-CX-Su7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Student Scores" largeTitleDisplayMode="never" id="8UM-wt-6gf" colorLabel="IBBuiltInLabel-Yellow" propertyAccessControl="all"/>
+                    <navigationItem key="navigationItem" title="Student Scores" largeTitleDisplayMode="never" id="8UM-wt-6gf" propertyAccessControl="none"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejj-AN-DCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4509.6000000000004" y="-1471.2143928035982"/>
+            <point key="canvasLocation" x="3537" y="-1492"/>
         </scene>
         <!--CourseCell-->
         <scene sceneID="Oei-IX-rup">
             <objects>
                 <navigationController title="CourseCell" automaticallyAdjustsScrollViewInsets="NO" id="iYR-DR-ERE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="TtP-3H-pAS" propertyAccessControl="none">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="TtP-3H-pAS" propertyAccessControl="none">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.28627450980000002" green="0.29803921570000003" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.28627450980000002" green="0.29803921570000003" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -188,7 +192,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FoQ-7A-rgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="-622"/>
+            <point key="canvasLocation" x="663" y="-971"/>
         </scene>
     </scenes>
 </document>

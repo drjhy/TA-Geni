@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/johnyoung/Desktop/TA Geni/TA Geni/Controllers/StudentListViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:TA Geni.xcodeproj">
    </FileRef>
    <FileRef
