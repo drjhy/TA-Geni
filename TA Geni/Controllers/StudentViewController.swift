@@ -61,6 +61,8 @@ class StudentViewController: SwipeTableViewController {
         
         navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ContrastColorOf(navBarColor, returnFlat: true)]
         
+        searchBar.layer.borderWidth = 1
+        searchBar.layer.borderColor = navBarColor.cgColor
         searchBar.barTintColor = navBarColor
         
     }

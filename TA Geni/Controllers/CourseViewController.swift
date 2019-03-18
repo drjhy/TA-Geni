@@ -179,6 +179,7 @@ class CourseListViewController: SwipeTableViewController {
         imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
         imageView.contentMode = .scaleAspectFit
         
+        
         navigationItem.titleView = imageView
     }
     
@@ -188,10 +189,38 @@ class CourseListViewController: SwipeTableViewController {
         
         navigationController?.navigationBar.barTintColor = UIColor(red:0.29, green:0.30, blue:0.64, alpha:1.0)
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.shadowImage = UIImage()
+     
+        
         addNavBarImage()
         loadCourse()
         tableView.separatorStyle = .none
     }
+    
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        
+        let label = UILabel()
+        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+        label.text = "Your Virtual Assistant"
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
+        label.textColor = UIColor.flatBlack
+        label.textAlignment = .center
+        
+        headerView.addSubview(label)
+        
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    
+    
+    
+    
     
     
     
