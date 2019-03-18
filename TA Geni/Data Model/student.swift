@@ -14,7 +14,7 @@ class Student: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var score: String = "0"
     @objc dynamic var dateCreated: Date?
-    
+    @objc dynamic var Graded: Bool = false
     @objc dynamic var studentCourseName: String = ""
     
     

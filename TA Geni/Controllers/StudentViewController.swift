@@ -28,22 +28,26 @@ class StudentViewController: SwipeTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.separatorStyle = .none
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         setUpNavBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         setUpNavBar()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
 //        updateNavBar(withHexCode: "494ca2")
         super.viewWillDisappear(animated)
+        
         setUpNavBar()
     }
     
@@ -81,13 +85,17 @@ class StudentViewController: SwipeTableViewController {
         
             cell.textLabel?.text = student.name
             
+            
             if let studentColor = UIColor(hexString: selectedCourse!.Color)?.darken(byPercentage: (CGFloat(indexPath.row))/(CGFloat(students!.count))){
                 
                 cell.backgroundColor = studentColor
                 cell.textLabel?.textColor = ContrastColorOf(studentColor, returnFlat: true)
-                cell.accessoryType = .detailDisclosureButton
             }
-       
+            
+            
+             cell.accessoryType =  student.Graded ? .checkmark  : .none
+        
+            
         } else {
             
             cell.textLabel?.text = "No Students Added..."
@@ -182,11 +190,12 @@ class StudentViewController: SwipeTableViewController {
 
     // MARK: - ALERT CONTROLLER WITH MULTIPLE BUTTONS & SOME RESTYLING
     
-    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let studentForRubric = self.students?[indexPath.row].studentID{
         
             fireAlert(studentID: studentForRubric as AnyObject)
+            
         }}
     
     @IBAction func fireAlert(studentID: AnyObject) {
@@ -212,8 +221,10 @@ class StudentViewController: SwipeTableViewController {
         let theStudent = realm.objects(Student.self).filter(predicate).first
         try! realm.write {
             theStudent?.score = "5"
+            theStudent?.Graded = true
         }
-        })
+        self.loadStudents()
+    })
 
     let action2 = UIAlertAction(title: "Voluntarily", style: .default, handler: { (action) -> Void in
         let realm = try! Realm()
@@ -221,7 +232,9 @@ class StudentViewController: SwipeTableViewController {
         let theStudent = realm.objects(Student.self).filter(predicate).first
         try! realm.write {
             theStudent?.score = "3"
+            theStudent?.Graded = true
         }
+         self.loadStudents()
     })
 
     let action3 = UIAlertAction(title: "Few", style: .default, handler: { (action) -> Void in
@@ -230,7 +243,9 @@ class StudentViewController: SwipeTableViewController {
         let theStudent = realm.objects(Student.self).filter(predicate).first
         try! realm.write {
             theStudent?.score = "2"
+            theStudent?.Graded = true
         }
+         self.loadStudents()
     })
     let action4 = UIAlertAction(title: "Absent or Does Not", style: .default, handler: { (action) -> Void in
         let realm = try! Realm()
@@ -238,7 +253,9 @@ class StudentViewController: SwipeTableViewController {
         let theStudent = realm.objects(Student.self).filter(predicate).first
         try! realm.write {
             theStudent?.score = "0"
+            theStudent?.Graded = true
         }
+         self.loadStudents()
     })
 
     // Cancel button
@@ -256,6 +273,7 @@ class StudentViewController: SwipeTableViewController {
     alert.addAction(action3)
     alert.addAction(action4)
     alert.addAction(cancel)
+    
     present(alert, animated: true, completion: nil)
     }
     
@@ -265,10 +283,12 @@ class StudentViewController: SwipeTableViewController {
     }
   
     func setUpNavBar(){
+        
         title = selectedCourse?.name
         tableView.separatorStyle = .none
         guard let colourHex = selectedCourse?.Color else {   fatalError()}
         updateNavBar(withHexCode: colourHex)
+        
     }
     
     
