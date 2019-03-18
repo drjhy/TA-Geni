@@ -187,7 +187,7 @@ class CourseListViewController: SwipeTableViewController {
     
     func setBackgroudNav(){
         
-        navigationController?.navigationBar.barTintColor = UIColor(red:0.29, green:0.30, blue:0.64, alpha:1.0)
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.80, green:0.74, blue:0.96, alpha:1.0)
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.shadowImage = UIImage()
      
@@ -207,7 +207,9 @@ class CourseListViewController: SwipeTableViewController {
         label.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
         label.textColor = UIColor.flatBlack
         label.textAlignment = .center
+        label.backgroundColor = UIColor(red:0.80, green:0.74, blue:0.96, alpha:1.0)
         
+        headerView.backgroundColor = UIColor(red:0.80, green:0.74, blue:0.96, alpha:1.0)
         headerView.addSubview(label)
         
         return headerView
