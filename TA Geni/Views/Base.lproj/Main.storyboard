@@ -68,11 +68,11 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="o7n-gh-XY2" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="11" id="o7n-gh-XY2" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
+                                <rect key="frame" x="0.0" y="72" width="375" height="11"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o7n-gh-XY2" id="0Yu-jc-0Gc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="10.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="0.95294117647058818" green="0.41568627450980389" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
@@ -83,27 +83,29 @@
                             <outlet property="delegate" destination="Hpo-UK-O6r" id="taZ-2B-X7c"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="FsY-cI-CU8"/>
+                        <barButtonItem title="Scores" id="P2w-EG-JrN">
+                            <connections>
+                                <segue destination="mwM-p2-6rr" kind="show" identifier="reuseIdentifier" id="yfw-J6-YIp"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Students" largeTitleDisplayMode="never" id="MiL-sc-Vgm" propertyAccessControl="none">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="HMo-XR-blg">
-                                <connections>
-                                    <action selector="addButtonPressed:" destination="Hpo-UK-O6r" id="Ka8-dJ-Cj8"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Scores" id="P2w-EG-JrN">
-                                <connections>
-                                    <segue destination="mwM-p2-6rr" kind="show" identifier="reuseIdentifier" id="yfw-J6-YIp"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HMo-XR-blg">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="Hpo-UK-O6r" id="Ka8-dJ-Cj8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="e7H-IV-cLn" id="IJd-K9-5wo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDU-ZK-EZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2535" y="-1603"/>
+            <point key="canvasLocation" x="2533.5999999999999" y="-1603.4482758620691"/>
         </scene>
         <!--Student Scores-->
         <scene sceneID="WWz-3a-cTc">
@@ -160,7 +162,15 @@
                             <outlet property="delegate" destination="mwM-p2-6rr" id="K3k-CX-Su7"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Reset" id="RvN-QG-ddH">
+                            <connections>
+                                <action selector="resetRubric:" destination="mwM-p2-6rr" id="NRV-My-CmX"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Student Scores" largeTitleDisplayMode="never" id="8UM-wt-6gf" propertyAccessControl="none"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejj-AN-DCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,6 +196,9 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Wi-aF-47e">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Pwb-24-fuW" kind="relationship" relationship="rootViewController" id="1d2-6A-cWX"/>
                     </connections>

@@ -34,7 +34,8 @@ class StudentViewController: SwipeTableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+
         setUpNavBar()
     }
     
@@ -69,6 +70,11 @@ class StudentViewController: SwipeTableViewController {
         searchBar.layer.borderColor = navBarColor.cgColor
         searchBar.barTintColor = navBarColor
         
+        self.navigationController?.isToolbarHidden = false
+
+        self.navigationController?.toolbar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)
+        self.navigationController?.toolbar.barTintColor = UIColor.init(cgColor: navBarColor.cgColor)
+        navigationController?.setToolbarHidden(false, animated: false)
     }
     
     //MARK - Tableview Datasource Methods
@@ -288,13 +294,13 @@ class StudentViewController: SwipeTableViewController {
         tableView.separatorStyle = .none
         guard let colourHex = selectedCourse?.Color else {   fatalError()}
         updateNavBar(withHexCode: colourHex)
-        
     }
     
-    
-    
+
 }
 
+
+    
     // MARK -- Search bar methods
     
 extension StudentViewController: UISearchBarDelegate {

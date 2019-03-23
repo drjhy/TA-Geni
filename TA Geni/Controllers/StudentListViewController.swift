@@ -17,7 +17,8 @@ class StudentListViewController: UITableViewController {
 
     var Name = [String]()
     var Score = [String]()
-    var tableCourse = [String]()
+    var graded: Bool = false
+    var StudentID = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +52,7 @@ class StudentListViewController: UITableViewController {
         for student in byStudent{
             Name.append(student.name)
             Score.append(student.score)
-//            print("\(student.name) is \(student.score) class participation")
-            
+            StudentID.append(student.studentID)
             tableView.reloadData()
             }
     }
@@ -67,8 +67,41 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
         return cell
     }
 
+    
+    
+    @IBAction func resetRubric(_ sender: Any) {
+    
+        resetScores()
+    }
+
+    func resetScores(){
+        
+       
+        
+
+        
+        
+        let allStudents = realm.objects(Student.self).filter("studentCourseName == %@", self.selectedCourse?.name as Any)
+    
+        let byStudent = allStudents.sorted(byKeyPath: "studentID", ascending: true)
+        
+        for student in byStudent{
+
+            let realm = try! Realm()
+            let predicate = NSPredicate(format: "studentID == %@", student.studentID)
+            let theStudent = realm.objects(Student.self).filter(predicate).first
+            try! realm.write {
+                theStudent?.score = "0"
+                theStudent?.Graded = false
+                
+            }
+            
+        }
+        
+    
+    }
+    
 
 }
-
 
 
