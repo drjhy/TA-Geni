@@ -85,7 +85,7 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="FsY-cI-CU8"/>
-                        <barButtonItem title="Scores" id="P2w-EG-JrN">
+                        <barButtonItem title="Scores" image="scoresIcon" id="P2w-EG-JrN">
                             <connections>
                                 <segue destination="mwM-p2-6rr" kind="show" identifier="reuseIdentifier" id="yfw-J6-YIp"/>
                             </connections>
@@ -163,7 +163,8 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="Reset" id="RvN-QG-ddH">
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Qn5-CP-6sc"/>
+                        <barButtonItem title="Reset Scores" id="RvN-QG-ddH">
                             <connections>
                                 <action selector="resetRubric:" destination="mwM-p2-6rr" id="NRV-My-CmX"/>
                             </connections>
@@ -208,4 +209,7 @@
             <point key="canvasLocation" x="663" y="-971"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="scoresIcon" width="491.51998901367188" height="377.27999877929688"/>
+    </resources>
 </document>

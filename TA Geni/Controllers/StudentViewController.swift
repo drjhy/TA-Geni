@@ -51,6 +51,8 @@ class StudentViewController: SwipeTableViewController {
         
         setUpNavBar()
     }
+
+    
     
     //    MARK: -  Nav Bar Setup Methods
     
@@ -71,7 +73,7 @@ class StudentViewController: SwipeTableViewController {
         searchBar.barTintColor = navBarColor
         
         self.navigationController?.isToolbarHidden = false
-
+        
         self.navigationController?.toolbar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)
         self.navigationController?.toolbar.barTintColor = UIColor.init(cgColor: navBarColor.cgColor)
         navigationController?.setToolbarHidden(false, animated: false)

@@ -27,10 +27,16 @@ class StudentListViewController: UITableViewController {
         
         tableView.separatorColor = UIColor.flatPurple
         
-        queryStudents()
+    
 
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    
+        queryStudents()
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -76,11 +82,6 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
     func resetScores(){
         
-       
-        
-
-        
-        
         let allStudents = realm.objects(Student.self).filter("studentCourseName == %@", self.selectedCourse?.name as Any)
     
         let byStudent = allStudents.sorted(byKeyPath: "studentID", ascending: true)
@@ -93,12 +94,9 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
             try! realm.write {
                 theStudent?.score = "0"
                 theStudent?.Graded = false
-                
             }
-            
         }
-        
-    
+            _ = navigationController?.popToRootViewController(animated: true)
     }
     
 
