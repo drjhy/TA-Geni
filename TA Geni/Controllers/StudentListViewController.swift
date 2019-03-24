@@ -92,7 +92,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
             let predicate = NSPredicate(format: "studentID == %@", student.studentID)
             let theStudent = realm.objects(Student.self).filter(predicate).first
             try! realm.write {
-                theStudent?.score = "0"
+                theStudent?.score = ""
                 theStudent?.Graded = false
             }
         }

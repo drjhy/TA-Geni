@@ -34,6 +34,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Class list" id="PgT-W7-MLj" propertyAccessControl="none">
+                        <barButtonItem key="backBarButtonItem" title=" " id="YVU-cp-XQG"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="KBI-QW-TvT" propertyAccessControl="none">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -92,6 +93,7 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Students" largeTitleDisplayMode="never" id="MiL-sc-Vgm" propertyAccessControl="none">
+                        <barButtonItem key="backBarButtonItem" title=" " id="dYH-ej-mzk"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HMo-XR-blg">
                             <connections>
                                 <action selector="addButtonPressed:" destination="Hpo-UK-O6r" id="Ka8-dJ-Cj8"/>
@@ -107,7 +109,7 @@
             </objects>
             <point key="canvasLocation" x="2533.5999999999999" y="-1603.4482758620691"/>
         </scene>
-        <!--Student Scores-->
+        <!--Score Report-->
         <scene sceneID="WWz-3a-cTc">
             <objects>
                 <tableViewController id="mwM-p2-6rr" customClass="StudentListViewController" customModule="TA_Geni" customModuleProvider="target" sceneMemberID="viewController">
@@ -170,7 +172,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Student Scores" largeTitleDisplayMode="never" id="8UM-wt-6gf" propertyAccessControl="none"/>
+                    <navigationItem key="navigationItem" title="Score Report" largeTitleDisplayMode="never" id="8UM-wt-6gf" propertyAccessControl="none"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejj-AN-DCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
