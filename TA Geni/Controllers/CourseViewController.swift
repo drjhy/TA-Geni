@@ -93,7 +93,12 @@ class CourseListViewController: SwipeTableViewController {
     
     override func updateModel(at indexPath: IndexPath) {
         
+
         if let courseForDeletion = self.courseArray?[indexPath.row]{
+            
+            let courseDeletion = courseForDeletion.name
+            
+            studentsForDelection(courseDeleted: courseDeletion)
             
             do{
                 try self.realm.write {
@@ -143,24 +148,28 @@ class CourseListViewController: SwipeTableViewController {
     
     func setColorCode(rowColorSet: UIColor) -> UIColor{
         
-        let color1 = UIColor(red:0.51, green:0.53, blue:0.84, alpha:1.0)
-        let color2 = UIColor(red:0.78, green:0.80, blue:0.94, alpha:1.0)
-        let color3 = UIColor(red:0.89, green:0.91, blue:0.95, alpha:1.0)
+        let color1 = UIColor(red:0.64, green:0.66, blue:0.83, alpha:1.0)
+        let color2 = color1.darken(byPercentage: 0.1)
+        let color3 = color2!.darken(byPercentage: 0.1)
+        let color4 = color3!.darken(byPercentage: 0.1)
+        let color5 = color4!.darken(byPercentage: 0.1)
+        let color6 = color5!.darken(byPercentage: 0.1)
+        let color7 = color6!.darken(byPercentage: 0.1)
+        let color8 = color7!.darken(byPercentage: 0.1)
+        let color9 = color8!.darken(byPercentage: 0.1)
+        let color10 = color9!.darken(byPercentage: 0.1)
         
-        if colorCount == 0 {
-            colorCount = 1
-            color = color1
-            return color
-        } else if colorCount == 1 {
-            colorCount = 2
-            color = color2
-            return color
-        } else {
-            colorCount = 0
-            color = color3
-            return color
+        if colorCount == 0 { colorCount = 1; color = color1; return color
+        } else if colorCount == 1 { colorCount = 2; color = color2!; return color
+        } else if colorCount == 2 { colorCount = 3; color = color3!; return color
+        } else if colorCount == 3 { colorCount = 4; color = color4!; return color
+        } else if colorCount == 4 { colorCount = 5; color = color5!; return color
+        } else if colorCount == 5 { colorCount = 6; color = color6!; return color
+        } else if colorCount == 6 { colorCount = 7; color = color7!; return color
+        } else if colorCount == 7 { colorCount = 8; color = color8!; return color
+        } else if colorCount == 8 { colorCount = 9; color = color9!; return color
+        } else { colorCount = 0; color = color10!; return color
         }
-        
     }
   
     func addNavBarImage() {
@@ -187,7 +196,7 @@ class CourseListViewController: SwipeTableViewController {
     
     func setBackgroudNav(){
         
-        navigationController?.navigationBar.barTintColor = UIColor(red:0.80, green:0.74, blue:0.96, alpha:1.0)
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.91, green:0.92, blue:0.96, alpha:1.0)
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.shadowImage = UIImage()
      
@@ -195,6 +204,7 @@ class CourseListViewController: SwipeTableViewController {
         addNavBarImage()
         loadCourse()
         tableView.separatorStyle = .none
+        navigationController?.setToolbarHidden(true, animated: false)
     }
     
     
@@ -207,9 +217,9 @@ class CourseListViewController: SwipeTableViewController {
         label.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
         label.textColor = UIColor.flatBlack
         label.textAlignment = .center
-        label.backgroundColor = UIColor(red:0.80, green:0.74, blue:0.96, alpha:1.0)
+        label.backgroundColor = UIColor(red:0.91, green:0.92, blue:0.96, alpha:1.0)
         
-        headerView.backgroundColor = UIColor(red:0.80, green:0.74, blue:0.96, alpha:1.0)
+        headerView.backgroundColor = UIColor(red:0.91, green:0.92, blue:0.96, alpha:1.0)
         headerView.addSubview(label)
         
         return headerView
@@ -220,7 +230,23 @@ class CourseListViewController: SwipeTableViewController {
     }
     
     
-    
+    func studentsForDelection(courseDeleted: String){
+        
+        let allStudents = realm.objects(Student.self).filter("studentCourseName == %@", courseDeleted)
+        
+        let byStudent = allStudents.sorted(byKeyPath: "studentID", ascending: true)
+        
+        for student in byStudent{
+            
+            let realm = try! Realm()
+            let predicate = NSPredicate(format: "studentID == %@", student.studentID)
+            let theStudent = realm.objects(Student.self).filter(predicate).first
+            try! realm.write {
+                self.realm.delete(theStudent!)
+                
+            }
+        }
+    }
     
     
     
