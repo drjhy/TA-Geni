@@ -48,7 +48,7 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
         deleteAction.image = UIImage(named: "delete-Icon")
         
         return [deleteAction]
-            
+        
         }
 
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {

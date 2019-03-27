@@ -253,6 +253,6 @@ class CourseListViewController: SwipeTableViewController {
     
     
 }
-    
+
 
 
