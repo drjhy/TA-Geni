@@ -874,6 +874,7 @@ public enum SyncSubscriptionState: Equatable {
             self = .invalidated
         case .error:
             self = .error(rlmSubscription.error!)
+            
         }
     }
 

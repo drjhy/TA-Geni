@@ -135,7 +135,6 @@
 				B61D76F6227D83F231D18C4A /* Pods-TA Geni.debug.xcconfig */,
 				BC0461DE2607403CD4A68210 /* Pods-TA Geni.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -429,7 +428,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.youngdynasty.com.TA-Geni";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -449,7 +448,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.youngdynasty.com.TA-Geni";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
