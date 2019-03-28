@@ -10,10 +10,7 @@ import UIKit
 import RealmSwift
 import ChameleonFramework
 
-
-
 class StudentViewController: SwipeTableViewController {
-
     
     let realm = try! Realm()
     var students: Results<Student>?
@@ -34,7 +31,6 @@ class StudentViewController: SwipeTableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
 
         setUpNavBar()
     }

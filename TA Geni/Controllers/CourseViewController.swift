@@ -11,7 +11,7 @@ import RealmSwift
 import ChameleonFramework
 
 var colorCount = 0
-var color: UIColor = .clear
+var color: UIColor = UIColor(red:0.49, green:0.49, blue:0.49, alpha:1.0)
 
 class CourseListViewController: SwipeTableViewController {
     
@@ -148,7 +148,7 @@ class CourseListViewController: SwipeTableViewController {
     
     func setColorCode(rowColorSet: UIColor) -> UIColor{
         
-        let color1 = UIColor(red:0.64, green:0.66, blue:0.83, alpha:1.0)
+        let color1 = UIColor(red:0.89, green:0.91, blue:0.95, alpha:1.0)
         let color2 = color1.darken(byPercentage: 0.1)
         let color3 = color2!.darken(byPercentage: 0.1)
         let color4 = color3!.darken(byPercentage: 0.1)
@@ -196,7 +196,7 @@ class CourseListViewController: SwipeTableViewController {
     
     func setBackgroudNav(){
         
-        navigationController?.navigationBar.barTintColor = UIColor(red:0.91, green:0.92, blue:0.96, alpha:1.0)
+        navigationController?.navigationBar.barTintColor = color
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.shadowImage = UIImage()
      
@@ -204,7 +204,11 @@ class CourseListViewController: SwipeTableViewController {
         addNavBarImage()
         loadCourse()
         tableView.separatorStyle = .none
-        navigationController?.setToolbarHidden(true, animated: false)
+    
+        navigationController?.toolbar.tintColor = ContrastColorOf(color, returnFlat: true)
+        navigationController?.toolbar.barTintColor = UIColor.init(cgColor: color.cgColor)
+        navigationController?.setToolbarHidden(false, animated: false)
+    
     }
     
     
@@ -217,9 +221,9 @@ class CourseListViewController: SwipeTableViewController {
         label.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
         label.textColor = UIColor.flatBlack
         label.textAlignment = .center
-        label.backgroundColor = UIColor(red:0.91, green:0.92, blue:0.96, alpha:1.0)
+        label.backgroundColor = UIColor(red:0.49, green:0.49, blue:0.49, alpha:1.0)
         
-        headerView.backgroundColor = UIColor(red:0.91, green:0.92, blue:0.96, alpha:1.0)
+        headerView.backgroundColor = UIColor(red:0.49, green:0.49, blue:0.49, alpha:1.0)
         headerView.addSubview(label)
         
         return headerView
@@ -247,11 +251,6 @@ class CourseListViewController: SwipeTableViewController {
             }
         }
     }
-    
-    
-    
-    
-    
 }
 
 
