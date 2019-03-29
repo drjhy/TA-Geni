@@ -872,7 +872,7 @@ public enum SyncSubscriptionState: Equatable {
             self = .complete
         case .invalidated:
             self = .invalidated
-        case .error:
+        default:
             self = .error(rlmSubscription.error!)
             
         }
