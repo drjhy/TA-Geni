@@ -64,12 +64,22 @@ class StudentViewController: SwipeTableViewController {
         
         navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ContrastColorOf(navBarColor, returnFlat: true)]
         
+
+        
+        //MARK - Customizing SearchBar
         searchBar.layer.borderWidth = 1
         searchBar.layer.borderColor = navBarColor.cgColor
         searchBar.barTintColor = navBarColor
+        searchBar.placeholder = "Search Students"
+        searchBar.setImage(UIImage(), for: .clear, state: .normal)
+        
+        // Configure text field
+        if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+            textfield.backgroundColor = UIColor(red:0.87, green:0.96, blue:0.95, alpha:1.0)
+            textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : ContrastColorOf(navBarColor, returnFlat: true)])
+        }
         
         self.navigationController?.isToolbarHidden = false
-        
         self.navigationController?.toolbar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)
         self.navigationController?.toolbar.barTintColor = UIColor.init(cgColor: navBarColor.cgColor)
         navigationController?.setToolbarHidden(false, animated: false)
