@@ -13,4 +13,5 @@ class Course: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var Color: String = "313131"
     let studentList = List<Student>()
+    let rubricList = List<Rubric>()
 }

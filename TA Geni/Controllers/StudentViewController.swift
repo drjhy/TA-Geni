@@ -13,6 +13,7 @@ import ChameleonFramework
 class StudentViewController: SwipeTableViewController {
     
     let realm = try! Realm()
+    var rubrics: Results<Rubric>?
     var students: Results<Student>?
     var selectedStudent: Student?
     var selectedCourse : Course?{
@@ -200,7 +201,91 @@ class StudentViewController: SwipeTableViewController {
             
             tableView.reloadData()
         }
+    
+//    MARK Customize Rubric information and Headings
+    
+    @IBAction func customizeRubric(_ sender: UIBarButtonItem) {
+    
+        var textField1 = UITextField()
+        var textField2 = UITextField()
+        var textField3 = UITextField()
+        var textField4 = UITextField()
+        var textField5 = UITextField()
+        var textField6 = UITextField()
+        var textField7 = UITextField()
         
+        let alert = UIAlertController(title: "Personalize Componants", message: "", preferredStyle: .alert)
+        
+        let  action = UIAlertAction(title: "Comfirm", style: .default) { (action) in
+            
+            
+            if let currentCourse = self.selectedCourse {
+                
+                do {
+                    try self.realm.write {
+                        
+                        let  newRubric  = Rubric()
+                        
+                        newRubric.rubricTitle = textField1.text!
+                        newRubric.rubricDescription = textField2.text!
+                        newRubric.rubricCourseName = (self.selectedCourse?.name)!
+                        newRubric.rubricActionTitle1 = textField3.text!
+                        newRubric.rubricActionTitle2 = textField4.text!
+                        newRubric.rubricActionTitle3 = textField5.text!
+                        newRubric.rubricActionTitle4 = textField6.text!
+                        newRubric.rubricActionTitle5 = textField7.text!
+                        currentCourse.rubricList.append(newRubric)
+                    }
+                } catch {
+                    print("Error saving context \(error)")
+                }
+                self.tableView.reloadData()
+            }
+            
+        }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Change new title"
+            textField1  = alertTextField
+        }
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Change new description"
+            textField2  = alertTextField
+        }
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Change new level 5 description"
+            textField3  = alertTextField
+        }
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Change new level 4 description"
+            textField4  = alertTextField
+        }
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Change new level 3 description"
+            textField5  = alertTextField
+        }
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Change new level 2 description"
+            textField6  = alertTextField
+        }
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Change new level 1 description"
+            textField7  = alertTextField
+        }
+
+        alert.addAction(action)
+        
+        // Cancel button
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction!) in
+            print("Cancel button tapped");
+        }
+        alert.addAction(cancelAction)
+        
+        // Present Dialog message
+        present(alert, animated: true, completion:nil)
+        
+    }
+    
 
     // MARK: - ALERT CONTROLLER WITH MULTIPLE BUTTONS & SOME RESTYLING
     
@@ -223,13 +308,13 @@ class StudentViewController: SwipeTableViewController {
     // Change font of the title and message
     let titleFont:[String : AnyObject] = [ convertFromNSAttributedStringKey(NSAttributedString.Key.font) : UIFont(name: "HelveticaNeue-Bold", size: 18)! ]
     let messageFont:[String : AnyObject] = [ convertFromNSAttributedStringKey(NSAttributedString.Key.font) : UIFont(name: "HelveticaNeue-Thin", size: 14)! ]
-    let attributedTitle = NSMutableAttributedString(string: "Scoring Rubric", attributes: convertToOptionalNSAttributedStringKeyDictionary(titleFont))
-    let attributedMessage = NSMutableAttributedString(string: "Class participation contribution level.", attributes: convertToOptionalNSAttributedStringKeyDictionary(messageFont))
+    let attributedTitle = NSMutableAttributedString(string: Rubric().rubricTitle, attributes: convertToOptionalNSAttributedStringKeyDictionary(titleFont))
+    let attributedMessage = NSMutableAttributedString(string: Rubric().rubricDescription, attributes: convertToOptionalNSAttributedStringKeyDictionary(messageFont))
     alert.setValue(attributedTitle, forKey: "attributedTitle")
     alert.setValue(attributedMessage, forKey: "attributedMessage")
 
 
-    let action1 = UIAlertAction(title: "Actively and Regularly", style: .default, handler: { (action) -> Void in
+    let action1 = UIAlertAction(title: Rubric().rubricActionTitle1, style: .default, handler: { (action) -> Void in
         let realm = try! Realm()
         let predicate = NSPredicate(format: "studentID == %@", id)
         let theStudent = realm.objects(Student.self).filter(predicate).first
@@ -240,7 +325,18 @@ class StudentViewController: SwipeTableViewController {
         self.loadStudents()
     })
 
-    let action2 = UIAlertAction(title: "Voluntarily", style: .default, handler: { (action) -> Void in
+    let action2 = UIAlertAction(title: Rubric().rubricActionTitle2, style: .default, handler: { (action) -> Void in
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "studentID == %@", id)
+        let theStudent = realm.objects(Student.self).filter(predicate).first
+        try! realm.write {
+            theStudent?.score = "4"
+            theStudent?.Graded = true
+        }
+         self.loadStudents()
+    })
+
+    let action3 = UIAlertAction(title: Rubric().rubricActionTitle3, style: .default, handler: { (action) -> Void in
         let realm = try! Realm()
         let predicate = NSPredicate(format: "studentID == %@", id)
         let theStudent = realm.objects(Student.self).filter(predicate).first
@@ -250,8 +346,7 @@ class StudentViewController: SwipeTableViewController {
         }
          self.loadStudents()
     })
-
-    let action3 = UIAlertAction(title: "Few", style: .default, handler: { (action) -> Void in
+    let action4 = UIAlertAction(title: Rubric().rubricActionTitle4, style: .default, handler: { (action) -> Void in
         let realm = try! Realm()
         let predicate = NSPredicate(format: "studentID == %@", id)
         let theStudent = realm.objects(Student.self).filter(predicate).first
@@ -261,16 +356,16 @@ class StudentViewController: SwipeTableViewController {
         }
          self.loadStudents()
     })
-    let action4 = UIAlertAction(title: "Absent or Does Not", style: .default, handler: { (action) -> Void in
-        let realm = try! Realm()
-        let predicate = NSPredicate(format: "studentID == %@", id)
-        let theStudent = realm.objects(Student.self).filter(predicate).first
-        try! realm.write {
-            theStudent?.score = "0"
-            theStudent?.Graded = true
-        }
-         self.loadStudents()
-    })
+        let action5 = UIAlertAction(title: Rubric().rubricActionTitle5, style: .default, handler: { (action) -> Void in
+            let realm = try! Realm()
+            let predicate = NSPredicate(format: "studentID == %@", id)
+            let theStudent = realm.objects(Student.self).filter(predicate).first
+            try! realm.write {
+                theStudent?.score = "0"
+                theStudent?.Graded = true
+            }
+            self.loadStudents()
+        })
 
     // Cancel button
     let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
@@ -286,6 +381,7 @@ class StudentViewController: SwipeTableViewController {
     alert.addAction(action2)
     alert.addAction(action3)
     alert.addAction(action4)
+    alert.addAction(action5)
     alert.addAction(cancel)
     
     present(alert, animated: true, completion: nil)
