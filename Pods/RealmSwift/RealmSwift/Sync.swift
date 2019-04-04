@@ -760,8 +760,8 @@ public extension SyncSession {
      - see: `ProgressDirection`, `Progress`, `ProgressNotificationToken`
      */
     func addProgressNotification(for direction: ProgressDirection,
-                                        mode: ProgressMode,
-                                        block: @escaping (Progress) -> Void) -> ProgressNotificationToken? {
+                                 mode: ProgressMode,
+                                 block: @escaping (Progress) -> Void) -> ProgressNotificationToken? {
         return __addProgressNotification(for: (direction == .upload ? .upload : .download),
                                          mode: (mode == .reportIndefinitely
                                             ? .reportIndefinitely
@@ -872,9 +872,8 @@ public enum SyncSubscriptionState: Equatable {
             self = .complete
         case .invalidated:
             self = .invalidated
-        default:
+        case .error:
             self = .error(rlmSubscription.error!)
-            
         }
     }
 
@@ -959,6 +958,8 @@ public class SyncSubscription<T: RealmCollectionValue>: RealmCollectionValue {
 }
 
 extension Results {
+    // MARK: Sync
+
     /// Subscribe to the query represented by this `Results`
     ///
     /// Subscribing to a query asks the server to synchronize all objects to the
@@ -1391,6 +1392,8 @@ public struct ObjectPrivileges: OptionSet, CustomDebugStringConvertible {
 }
 
 extension Realm {
+    // MARK: Sync - Permissions
+
     /**
     Returns the computed privileges which the current user has for this Realm.
 
@@ -1514,6 +1517,8 @@ extension Realm {
     public var permissions: List<Permission> {
         return object(ofType: RealmPermission.self, forPrimaryKey: 0)!.permissions
     }
+
+    // MARK: Sync - Subscriptions
 
     /**
     Returns this list of the query-based sync subscriptions made for this Realm.

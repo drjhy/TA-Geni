@@ -69,8 +69,8 @@
 		A42779232217530E004DE559 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				A42779262217559D004DE559 /* student.swift */,
 				A4277928221755BB004DE559 /* courses.swift */,
+				A42779262217559D004DE559 /* student.swift */,
 				A43A6B44225014E10086F46A /* rubric.swift */,
 			);
 			path = "Data Model";

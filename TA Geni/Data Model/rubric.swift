@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Rubric: Object {
+    @objc dynamic var rubricCustomize: Int = 0
     @objc dynamic var rubricTitle: String = "Scoring Rubric"
     @objc dynamic var rubricDescription: String = "Class participation contribution level."
     @objc dynamic var rubricCourseName: String = ""
