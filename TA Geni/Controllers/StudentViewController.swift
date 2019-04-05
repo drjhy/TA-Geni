@@ -226,13 +226,13 @@ class StudentViewController: SwipeTableViewController {
                         newRubric.rubricActionTitle3 = textField5.text!
                         newRubric.rubricActionTitle4 = textField6.text!
                         newRubric.rubricActionTitle5 = textField7.text!
-
-                        if self.testRubric == 0 {
+                        
+                        if self.selectedCourse?.rubricList.first?.rubricCustomize == nil {
                             newRubric.rubricCustomize = 1
                             currentCourse.rubricList.append(newRubric)
-                        }else{
-                            currentCourse.rubricList.replace(index: 0, object: newRubric)
+                        return
                         }
+                            currentCourse.rubricList.replace(index: 0, object: newRubric)
                     }
                 } catch {
                     print("Error saving context \(error)")
@@ -303,7 +303,6 @@ class StudentViewController: SwipeTableViewController {
                 rAction3 = Rubric().rubricActionTitle3
                 rAction4 = Rubric().rubricActionTitle4
                 rAction5 = Rubric().rubricActionTitle5
-        
     }
     
     // MARK: - ALERT CONTROLLER WITH MULTIPLE BUTTONS & SOME RESTYLING

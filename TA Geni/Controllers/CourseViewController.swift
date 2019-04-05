@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import ChameleonFramework
 
-var colorCount = 0
+//var colorCount = 0
 var color: UIColor = UIColor(red:0.18, green:0.57, blue:0.59, alpha:1.0)
 
 class CourseListViewController: SwipeTableViewController {
@@ -147,6 +147,8 @@ class CourseListViewController: SwipeTableViewController {
 //    MARK - Set color cells for New Courses added.
     
     func setColorCode(rowColorSet: UIColor) -> UIColor{
+        
+        var colorCount = courseArray?.count
         
         let color1 = UIColor(red:0.27, green:0.72, blue:0.73, alpha:1.0)
         let color2 = color1.lighten(byPercentage: 0.1)
