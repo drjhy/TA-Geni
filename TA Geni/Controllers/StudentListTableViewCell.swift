@@ -14,6 +14,7 @@ class StudentListTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     
+ 
     
     override func awakeFromNib() {
         super.awakeFromNib()

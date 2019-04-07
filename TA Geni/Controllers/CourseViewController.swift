@@ -99,6 +99,7 @@ class CourseListViewController: SwipeTableViewController {
             let courseDeletion = courseForDeletion.name
             
             studentsForDelection(courseDeleted: courseDeletion)
+            rubricForDelection(courseDeleted: courseDeletion)
             
             do{
                 try self.realm.write {
@@ -149,7 +150,7 @@ class CourseListViewController: SwipeTableViewController {
     func setColorCode(rowColorSet: UIColor) -> UIColor{
         
         var colorCount = courseArray?.count
-        
+        print(courseArray?.count as Any)
         let color1 = UIColor(red:0.27, green:0.72, blue:0.73, alpha:1.0)
         let color2 = color1.lighten(byPercentage: 0.1)
         let color3 = color2!.lighten(byPercentage: 0.1)
@@ -180,7 +181,7 @@ class CourseListViewController: SwipeTableViewController {
 
         let image = UIImage(named: "Logo.png") //Your logo url here
         let imageView = UIImageView(image: image)
-        
+
         let bannerWidth = navController.navigationBar.frame.size.width
         let bannerHeight = navController.navigationBar.frame.size.height
 
@@ -212,6 +213,9 @@ class CourseListViewController: SwipeTableViewController {
         navigationController?.toolbar.tintColor = ContrastColorOf(color, returnFlat: true)
         navigationController?.toolbar.barTintColor = UIColor.init(cgColor: color.cgColor)
         navigationController?.setToolbarHidden(false, animated: false)
+        
+        getCurrentDateTime()
+
     
     }
     
@@ -222,9 +226,9 @@ class CourseListViewController: SwipeTableViewController {
         let label = UILabel()
         label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
         label.text = "Your Virtual Assistant"
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 20)
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 25)
         label.textColor = UIColor.flatBlack
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.backgroundColor = UIColor(red:0.18, green:0.57, blue:0.59, alpha:1.0)
         
         headerView.backgroundColor = UIColor(red:0.18, green:0.57, blue:0.59, alpha:1.0)
@@ -254,6 +258,37 @@ class CourseListViewController: SwipeTableViewController {
                 
             }
         }
+    }
+
+    func rubricForDelection(courseDeleted: String){
+        
+        let theRubric = realm.objects(Rubric.self).filter("rubricCourseName == %@", courseDeleted)
+            do{
+                try self.realm.write {
+                self.realm.delete(theRubric)
+                }
+            } catch {
+                print("Error deleting rubric, \(error)")
+            }
+        }
+
+    @IBOutlet weak var labelDate: UILabel!
+    
+    func getCurrentDateTime() {
+        
+        
+        let now = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "  EEEE, MMMM dd"
+        labelDate.text = formatter.string(from: now)
+        labelDate.font = UIFont(name: "HelveticaNeue-medium", size: 12)
+        labelDate.textColor = UIColor.darkGray
+        labelDate.textAlignment = .left
+        labelDate.backgroundColor = UIColor(red:0.18, green:0.57, blue:0.59, alpha:1.0)
+
+        
+        let text = formatter.string(from: now)
+        labelDate.text = text.uppercased()
     }
 }
 
