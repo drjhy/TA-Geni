@@ -62,7 +62,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YIW-eT-Wjb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="-1511.6941529235382"/>
+            <point key="canvasLocation" x="1481" y="-1603"/>
         </scene>
         <!--Students-->
         <scene sceneID="AKr-He-krN">
@@ -124,6 +124,9 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="dYH-ej-mzk"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="setting" id="HiX-SS-Aim">
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-36" maxY="-8"/>
+                            <connections>
+                                <segue destination="Ps6-qS-8HQ" kind="show" identifier="massUploaderInput" id="6iI-Sz-6Uv"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -135,20 +138,72 @@
             </objects>
             <point key="canvasLocation" x="2533.5999999999999" y="-1603.4482758620691"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Ob6-WK-gUS">
+        <!--ADD Students-->
+        <scene sceneID="gnQ-vg-iRu">
             <objects>
-                <viewController id="EM5-Tq-CuC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zyn-zN-nJP">
+                <viewController title="ADD Students" id="Ps6-qS-8HQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hzN-Ba-2E9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Jh6-hu-Edx"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Add student(s) by name." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3e9-To-EVd">
+                                <rect key="frame" x="56" y="112" width="262" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example: Doe, John J.; Doe, Jane; Doe, Josh" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-dD-qsY">
+                                <rect key="frame" x="56" y="156" width="262" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" borderStyle="line" placeholder="Paste Student names here..." clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="O4S-U4-Ecp">
+                                <rect key="frame" x="56" y="230" width="262" height="322"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="massUpload:" destination="INF-bi-ahC" eventType="editingDidEnd" id="jmy-Cd-6Bh"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use a  semicolon to seperate student names." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J8-NL-pBX">
+                                <rect key="frame" x="56" y="186" width="262" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87450980389999999" green="0.96078431369999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ddc-dD-qsY" firstAttribute="top" secondItem="3e9-To-EVd" secondAttribute="bottom" constant="23" id="2gi-v9-MF8"/>
+                            <constraint firstItem="5J8-NL-pBX" firstAttribute="leading" secondItem="HvK-RM-GfG" secondAttribute="leading" constant="56" id="4WJ-qF-eMU"/>
+                            <constraint firstItem="HvK-RM-GfG" firstAttribute="bottom" secondItem="O4S-U4-Ecp" secondAttribute="bottom" constant="71" id="5yv-pC-syk"/>
+                            <constraint firstItem="HvK-RM-GfG" firstAttribute="trailing" secondItem="3e9-To-EVd" secondAttribute="trailing" constant="57" id="7gS-PA-hCp"/>
+                            <constraint firstItem="ddc-dD-qsY" firstAttribute="top" secondItem="3e9-To-EVd" secondAttribute="bottom" constant="23" id="8UE-If-jkv"/>
+                            <constraint firstItem="HvK-RM-GfG" firstAttribute="trailing" secondItem="ddc-dD-qsY" secondAttribute="trailing" constant="57" id="9zD-9I-S1F"/>
+                            <constraint firstItem="O4S-U4-Ecp" firstAttribute="top" secondItem="5J8-NL-pBX" secondAttribute="bottom" constant="29.5" id="CZw-Pm-mud"/>
+                            <constraint firstItem="3e9-To-EVd" firstAttribute="top" secondItem="HvK-RM-GfG" secondAttribute="top" constant="48" id="FMi-pY-2Ih"/>
+                            <constraint firstItem="5J8-NL-pBX" firstAttribute="top" secondItem="ddc-dD-qsY" secondAttribute="bottom" constant="15.5" id="InR-6M-RPD"/>
+                            <constraint firstItem="3e9-To-EVd" firstAttribute="leading" secondItem="HvK-RM-GfG" secondAttribute="leading" constant="56" id="LZY-Og-5zk"/>
+                            <constraint firstItem="HvK-RM-GfG" firstAttribute="trailing" secondItem="O4S-U4-Ecp" secondAttribute="trailing" constant="57" id="RQk-iE-zqg"/>
+                            <constraint firstItem="HvK-RM-GfG" firstAttribute="trailing" secondItem="5J8-NL-pBX" secondAttribute="trailing" constant="57" id="RS6-4s-1mo"/>
+                            <constraint firstItem="5J8-NL-pBX" firstAttribute="top" secondItem="ddc-dD-qsY" secondAttribute="bottom" constant="15.5" id="lUe-IR-uh9"/>
+                            <constraint firstItem="ddc-dD-qsY" firstAttribute="leading" secondItem="HvK-RM-GfG" secondAttribute="leading" constant="56" id="qfL-j0-2BG"/>
+                            <constraint firstItem="O4S-U4-Ecp" firstAttribute="leading" secondItem="HvK-RM-GfG" secondAttribute="leading" constant="56" id="roN-Qq-wNH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HvK-RM-GfG"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Y8o-Jf-vnh"/>
+                        <barButtonItem systemItem="action" id="s5a-NR-Nch"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jbm-1G-qQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g31-cb-qsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="INF-bi-ahC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3372" y="-2055"/>
+            <point key="canvasLocation" x="3537" y="-2246"/>
         </scene>
         <!--Score Report-->
         <scene sceneID="WWz-3a-cTc">
@@ -219,7 +274,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ejj-AN-DCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3537" y="-1492"/>
+            <point key="canvasLocation" x="3537" y="-1066"/>
         </scene>
         <!--CourseCell-->
         <scene sceneID="Oei-IX-rup">
@@ -250,7 +305,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FoQ-7A-rgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663" y="-971"/>
+            <point key="canvasLocation" x="522" y="-1603"/>
         </scene>
     </scenes>
     <resources>

@@ -27,7 +27,6 @@ class StudentViewController: SwipeTableViewController {
     var rAction4:String? = ""
     var rAction5:String? = ""
     
-    
     var selectedCourse : Course?{
         didSet{
             loadStudents()
@@ -150,14 +149,18 @@ class StudentViewController: SwipeTableViewController {
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
     
-    
-     var textField = UITextField()
-            
+        DispatchQueue.main.async { self.resignFirstResponder() }
+        
+        var textField = UITextField()
+        
+//        copyText(textToCopy: textField.text! as NSString)
+//        textField.text! = pasteText() as String
+        
+
     let alert = UIAlertController(title: "Add New Student", message: "", preferredStyle: .alert)
-            
+        
             let  action = UIAlertAction(title: "Add", style: .default) { (action) in
-                
-                
+
                 if let currentCourse = self.selectedCourse {
                     
                     do {
@@ -175,7 +178,6 @@ class StudentViewController: SwipeTableViewController {
                     }
                     self.tableView.reloadData()
                 }
-                
             }
             
             alert.addTextField { (alertTextField) in
@@ -193,7 +195,6 @@ class StudentViewController: SwipeTableViewController {
         
         // Present Dialog message
         present(alert, animated: true, completion:nil)
-        
         }
         
         func loadStudents() {
@@ -415,6 +416,21 @@ class StudentViewController: SwipeTableViewController {
         guard let colourHex = selectedCourse?.Color else {   fatalError()}
         updateNavBar(withHexCode: colourHex)
     }
+    // Function receives the text as argument for copying
+    func copyText(textToCopy : NSString)
+    {
+        let pasteBoard = UIPasteboard.general;
+        pasteBoard.string = textToCopy as String; // Set your text here
+    }
+    
+    // Function returns the copied string
+    func pasteText() -> NSString
+    {
+        let pasteBoard = UIPasteboard.general;
+        print("Copied Text : \(String(describing: pasteBoard.string))"); // It prints the copied text
+        return pasteBoard.string! as NSString;
+    }
+
 }
 
     // MARK -- Search bar methods
@@ -435,6 +451,12 @@ extension StudentViewController: UISearchBarDelegate {
                 }
             }
         }
+
+
+
+
+
+
 }
 
 //// Helper function inserted by Swift 4.2 migrator.

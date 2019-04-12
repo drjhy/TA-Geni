@@ -115,6 +115,10 @@ class CourseListViewController: SwipeTableViewController {
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
 
+        DispatchQueue.main.async {
+            self.resignFirstResponder()
+        }
+        
         var textField = UITextField()
         
         let alert = UIAlertController(title: "Add New Course", message: "", preferredStyle: .alert)

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TA Geni/Controllers/CourseViewController.swift"
-            timestampString = "576347292.254216"
+            timestampString = "576555553.014939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "getCurrentDateTime()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TA Geni/Controllers/StudentListViewController.swift"
-            timestampString = "576347292.2546771"
+            timestampString = "576776728.6360511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TA Geni/Controllers/CourseViewController.swift"
-            timestampString = "576347292.254728"
+            timestampString = "576555553.015268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "getCurrentDateTime()"
             landmarkType = "7">
          </BreakpointContent>
