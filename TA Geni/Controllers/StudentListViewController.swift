@@ -66,7 +66,7 @@ class StudentListViewController: UITableViewController {
 
 
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell : StudentListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! StudentListTableViewCell
+    let cell : StudentListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "goToScoreReport", for: indexPath) as! StudentListTableViewCell
     
     cell.nameLabel.text = Name[indexPath.row]
     cell.scoreLabel.text = Score[indexPath.row]
@@ -99,15 +99,6 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
         }
             _ = navigationController?.popToRootViewController(animated: true)
     }
-    
-
-    
-    
-    
-    
-    
-    
-    
 }
 
 

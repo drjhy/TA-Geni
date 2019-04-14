@@ -116,7 +116,7 @@
                         <barButtonItem title="Marks" image="rubricIcon" id="P2w-EG-JrN">
                             <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                             <connections>
-                                <segue destination="mwM-p2-6rr" kind="show" identifier="reuseIdentifier" id="yfw-J6-YIp"/>
+                                <segue destination="mwM-p2-6rr" kind="show" identifier="goToScoreReport" id="yfw-J6-YIp"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -125,7 +125,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="setting" id="HiX-SS-Aim">
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-36" maxY="-8"/>
                             <connections>
-                                <segue destination="Ps6-qS-8HQ" kind="show" identifier="massUploaderInput" id="6iI-Sz-6Uv"/>
+                                <segue destination="Ps6-qS-8HQ" kind="show" identifier="goToMassUpload" id="6iI-Sz-6Uv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -141,69 +141,76 @@
         <!--ADD Students-->
         <scene sceneID="gnQ-vg-iRu">
             <objects>
-                <viewController title="ADD Students" id="Ps6-qS-8HQ" sceneMemberID="viewController">
+                <viewController title="ADD Students" id="Ps6-qS-8HQ" customClass="MassUploadViewController" customModule="TA_Geni" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hzN-Ba-2E9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Add student(s) by name." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3e9-To-EVd">
-                                <rect key="frame" x="56" y="112" width="262" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example: Doe, John J.; Doe, Jane; Doe, Josh" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-dD-qsY">
+                                <rect key="frame" x="56" y="156" width="250" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Rhp-a3-T2Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use a semicolon to seperate student names." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J8-NL-pBX">
+                                <rect key="frame" x="56" y="186" width="250" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="w6h-xe-0rv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add student(s) by name." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3e9-To-EVd">
+                                <rect key="frame" x="56" y="105" width="250" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Example: Doe, John J.; Doe, Jane; Doe, Josh" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-dD-qsY">
-                                <rect key="frame" x="56" y="156" width="262" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" borderStyle="line" placeholder="Paste Student names here..." clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="O4S-U4-Ecp">
-                                <rect key="frame" x="56" y="230" width="262" height="322"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Paste student names" clearsOnBeginEditing="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="xPX-ON-rIV">
+                                <rect key="frame" x="56" y="220" width="250" height="305"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="massUpload:" destination="INF-bi-ahC" eventType="editingDidEnd" id="jmy-Cd-6Bh"/>
-                                </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use a  semicolon to seperate student names." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J8-NL-pBX">
-                                <rect key="frame" x="56" y="186" width="262" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.87450980389999999" green="0.96078431369999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ddc-dD-qsY" firstAttribute="top" secondItem="3e9-To-EVd" secondAttribute="bottom" constant="23" id="2gi-v9-MF8"/>
-                            <constraint firstItem="5J8-NL-pBX" firstAttribute="leading" secondItem="HvK-RM-GfG" secondAttribute="leading" constant="56" id="4WJ-qF-eMU"/>
-                            <constraint firstItem="HvK-RM-GfG" firstAttribute="bottom" secondItem="O4S-U4-Ecp" secondAttribute="bottom" constant="71" id="5yv-pC-syk"/>
-                            <constraint firstItem="HvK-RM-GfG" firstAttribute="trailing" secondItem="3e9-To-EVd" secondAttribute="trailing" constant="57" id="7gS-PA-hCp"/>
-                            <constraint firstItem="ddc-dD-qsY" firstAttribute="top" secondItem="3e9-To-EVd" secondAttribute="bottom" constant="23" id="8UE-If-jkv"/>
-                            <constraint firstItem="HvK-RM-GfG" firstAttribute="trailing" secondItem="ddc-dD-qsY" secondAttribute="trailing" constant="57" id="9zD-9I-S1F"/>
-                            <constraint firstItem="O4S-U4-Ecp" firstAttribute="top" secondItem="5J8-NL-pBX" secondAttribute="bottom" constant="29.5" id="CZw-Pm-mud"/>
-                            <constraint firstItem="3e9-To-EVd" firstAttribute="top" secondItem="HvK-RM-GfG" secondAttribute="top" constant="48" id="FMi-pY-2Ih"/>
-                            <constraint firstItem="5J8-NL-pBX" firstAttribute="top" secondItem="ddc-dD-qsY" secondAttribute="bottom" constant="15.5" id="InR-6M-RPD"/>
-                            <constraint firstItem="3e9-To-EVd" firstAttribute="leading" secondItem="HvK-RM-GfG" secondAttribute="leading" constant="56" id="LZY-Og-5zk"/>
-                            <constraint firstItem="HvK-RM-GfG" firstAttribute="trailing" secondItem="O4S-U4-Ecp" secondAttribute="trailing" constant="57" id="RQk-iE-zqg"/>
-                            <constraint firstItem="HvK-RM-GfG" firstAttribute="trailing" secondItem="5J8-NL-pBX" secondAttribute="trailing" constant="57" id="RS6-4s-1mo"/>
-                            <constraint firstItem="5J8-NL-pBX" firstAttribute="top" secondItem="ddc-dD-qsY" secondAttribute="bottom" constant="15.5" id="lUe-IR-uh9"/>
-                            <constraint firstItem="ddc-dD-qsY" firstAttribute="leading" secondItem="HvK-RM-GfG" secondAttribute="leading" constant="56" id="qfL-j0-2BG"/>
-                            <constraint firstItem="O4S-U4-Ecp" firstAttribute="leading" secondItem="HvK-RM-GfG" secondAttribute="leading" constant="56" id="roN-Qq-wNH"/>
+                            <constraint firstItem="3e9-To-EVd" firstAttribute="leading" secondItem="ddc-dD-qsY" secondAttribute="leading" id="1HG-5z-uWs"/>
+                            <constraint firstItem="xPX-ON-rIV" firstAttribute="top" secondItem="5J8-NL-pBX" secondAttribute="bottom" constant="19" id="5XN-86-I3b"/>
+                            <constraint firstItem="HvK-RM-GfG" firstAttribute="trailing" secondItem="xPX-ON-rIV" secondAttribute="trailing" constant="69" id="DeZ-OI-qTj"/>
+                            <constraint firstItem="3e9-To-EVd" firstAttribute="leading" secondItem="HvK-RM-GfG" secondAttribute="leading" constant="56" id="Err-FN-bNC"/>
+                            <constraint firstItem="5J8-NL-pBX" firstAttribute="trailing" secondItem="ddc-dD-qsY" secondAttribute="trailing" id="Nga-HA-Gpp"/>
+                            <constraint firstItem="3e9-To-EVd" firstAttribute="top" secondItem="HvK-RM-GfG" secondAttribute="top" constant="41" id="O5N-pn-efB"/>
+                            <constraint firstItem="5J8-NL-pBX" firstAttribute="top" secondItem="ddc-dD-qsY" secondAttribute="bottom" constant="15" id="PsG-Pf-8RQ"/>
+                            <constraint firstItem="5J8-NL-pBX" firstAttribute="leading" secondItem="xPX-ON-rIV" secondAttribute="leading" id="W5O-mP-sPx"/>
+                            <constraint firstItem="ddc-dD-qsY" firstAttribute="top" secondItem="3e9-To-EVd" secondAttribute="bottom" constant="30" id="pM3-hi-OTa"/>
+                            <constraint firstItem="HvK-RM-GfG" firstAttribute="bottom" secondItem="xPX-ON-rIV" secondAttribute="bottom" constant="98" id="sOd-eV-Dpj"/>
+                            <constraint firstItem="5J8-NL-pBX" firstAttribute="leading" secondItem="ddc-dD-qsY" secondAttribute="leading" id="ucn-T3-pgT"/>
+                            <constraint firstItem="5J8-NL-pBX" firstAttribute="trailing" secondItem="xPX-ON-rIV" secondAttribute="trailing" id="uf7-vJ-7hl"/>
+                            <constraint firstItem="3e9-To-EVd" firstAttribute="trailing" secondItem="ddc-dD-qsY" secondAttribute="trailing" id="xiL-0Z-Isr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HvK-RM-GfG"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Y8o-Jf-vnh"/>
-                        <barButtonItem systemItem="action" id="s5a-NR-Nch"/>
+                        <barButtonItem systemItem="action" id="s5a-NR-Nch">
+                            <connections>
+                                <action selector="uploadStudents:" destination="Ps6-qS-8HQ" id="A9l-2R-gda"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="studentUpload" destination="xPX-ON-rIV" id="piN-cn-RlP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g31-cb-qsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="INF-bi-ahC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3537" y="-2246"/>
+            <point key="canvasLocation" x="3536.8000000000002" y="-2247.5262368815593"/>
         </scene>
         <!--Score Report-->
         <scene sceneID="WWz-3a-cTc">

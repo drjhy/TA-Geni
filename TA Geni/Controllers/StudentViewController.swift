@@ -33,6 +33,13 @@ class StudentViewController: SwipeTableViewController {
         }
     }
     
+    enum SegueIdentifier: String {
+        case SegueToScoreReportViewIdentifier = "goToScoreReport"
+        case SegueToMassUploadViewIdentifier = "goToMassUpload"
+    }
+    
+    
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
@@ -121,12 +128,23 @@ class StudentViewController: SwipeTableViewController {
     }
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "reuseIdentifier" {
+//        if segue.identifier == "goToScoreReport" {
         
-                let controller = segue.destination as! StudentListViewController
-                controller.selectedCourse = self.selectedCourse
+        if let segueIdentifier =  SegueIdentifier(rawValue: segue.identifier!) {
+                
+                switch segueIdentifier {
+                case .SegueToScoreReportViewIdentifier:
+                    let controller = segue.destination as! StudentListViewController
+                    controller.selectedCourse = self.selectedCourse
+                case .SegueToMassUploadViewIdentifier:
+                    let controller = segue.destination as! MassUploadViewController
+                    controller.selectedCourse = self.selectedCourse
+
+                }
             }
-    }
+        }
+    
+
     
     // MARK - Tableview Delegate Methods
     
@@ -450,8 +468,7 @@ extension StudentViewController: UISearchBarDelegate {
                     searchBar.resignFirstResponder()
                 }
             }
-        }
-
+    }
 
 
 

@@ -14,8 +14,7 @@ class StudentListTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     
-    @IBAction func massUpload(_ sender: Any) {
-    }
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -14,6 +14,7 @@
 		A427792F221774DF004DE559 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A427792E221774DF004DE559 /* StudentViewController.swift */; };
 		A43A6B45225014E10086F46A /* rubric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A6B44225014E10086F46A /* rubric.swift */; };
 		A43F9A4D221AFEE100E37293 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F9A4C221AFEE100E37293 /* SwipeTableViewController.swift */; };
+		A45B2D7922617444001DBB4B /* MassUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45B2D7822617444001DBB4B /* MassUploadViewController.swift */; };
 		A463ED422217494A002984B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463ED412217494A002984B7 /* AppDelegate.swift */; };
 		A463ED442217494A002984B7 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A463ED432217494A002984B7 /* CourseViewController.swift */; };
 		A463ED472217494A002984B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A463ED452217494A002984B7 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		A427792E221774DF004DE559 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		A43A6B44225014E10086F46A /* rubric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubric.swift; sourceTree = "<group>"; };
 		A43F9A4C221AFEE100E37293 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
+		A45B2D7822617444001DBB4B /* MassUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassUploadViewController.swift; sourceTree = "<group>"; };
 		A463ED3E2217494A002984B7 /* TA Geni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TA Geni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A463ED412217494A002984B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A463ED432217494A002984B7 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				A427792E221774DF004DE559 /* StudentViewController.swift */,
 				A41DEDBA2228BC4700A3EDC1 /* StudentListViewController.swift */,
 				A41DEDB622277A1100A3EDC1 /* StudentListTableViewCell.swift */,
+				A45B2D7822617444001DBB4B /* MassUploadViewController.swift */,
 				A43F9A4C221AFEE100E37293 /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
@@ -272,6 +275,7 @@
 				A463ED442217494A002984B7 /* CourseViewController.swift in Sources */,
 				A43A6B45225014E10086F46A /* rubric.swift in Sources */,
 				A463ED422217494A002984B7 /* AppDelegate.swift in Sources */,
+				A45B2D7922617444001DBB4B /* MassUploadViewController.swift in Sources */,
 				A41DEDBB2228BC4700A3EDC1 /* StudentListViewController.swift in Sources */,
 				A43F9A4D221AFEE100E37293 /* SwipeTableViewController.swift in Sources */,
 				A42779272217559D004DE559 /* student.swift in Sources */,
