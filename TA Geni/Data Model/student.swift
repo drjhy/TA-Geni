@@ -12,7 +12,7 @@ import RealmSwift
 class Student: Object {
     @objc dynamic var studentID = UUID().uuidString
     @objc dynamic var name: String = ""
-    @objc dynamic var score: String = "0"
+    @objc dynamic var score: String = ""
     @objc dynamic var dateCreated: Date?
     @objc dynamic var Graded: Bool = false
     @objc dynamic var studentCourseName: String = ""

@@ -119,11 +119,12 @@
                                 <segue destination="mwM-p2-6rr" kind="show" identifier="goToScoreReport" id="yfw-J6-YIp"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="hDi-ZX-Qbf"/>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="poD-Cs-1CY"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Students" largeTitleDisplayMode="never" id="MiL-sc-Vgm" propertyAccessControl="none">
                         <barButtonItem key="backBarButtonItem" title=" " id="dYH-ej-mzk"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="setting" id="HiX-SS-Aim">
-                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="-36" maxY="-8"/>
                             <connections>
                                 <segue destination="Ps6-qS-8HQ" kind="show" identifier="goToMassUpload" id="6iI-Sz-6Uv"/>
                             </connections>
@@ -221,7 +222,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.27450980392156865" green="0.71764705882352942" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="L1T-Ht-qGD" customClass="StudentListTableViewCell" customModule="TA_Geni" propertyAccessControl="none">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="goToScoreReport" id="L1T-Ht-qGD" customClass="StudentListTableViewCell" customModule="TA_Geni" propertyAccessControl="none">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L1T-Ht-qGD" id="bvX-h0-Pfr">
@@ -257,8 +258,8 @@
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="0.28627450980392155" green="0.29803921568627451" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="nameLabel" destination="PLz-vT-MFz" id="0LS-6W-UFK"/>
-                                    <outlet property="scoreLabel" destination="a1h-VR-qYf" id="0XY-XY-owh"/>
+                                    <outlet property="nameLabel" destination="PLz-vT-MFz" id="glg-1d-D0I"/>
+                                    <outlet property="scoreLabel" destination="a1h-VR-qYf" id="ddy-3s-FFv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -319,7 +320,7 @@
         <image name="add" width="128" height="128"/>
         <image name="power" width="128" height="128"/>
         <image name="rubricIcon" width="1577" height="1577"/>
-        <image name="setting" width="128" height="128"/>
+        <image name="setting" width="20" height="20"/>
         <image name="settings" width="128" height="128"/>
     </resources>
 </document>

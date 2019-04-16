@@ -19,16 +19,13 @@ class StudentListViewController: UITableViewController {
     var Score = [String]()
     var graded: Bool = false
     var StudentID = [String]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        
-        tableView.separatorColor = UIColor.flatGreen
-        view.backgroundColor = UIColor(red:0.96, green:0.98, blue:0.96, alpha:1.0)
-        
-    
+    tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    tableView.separatorColor = UIColor.flatGreen
+    view.backgroundColor = UIColor(red:0.96, green:0.98, blue:0.96, alpha:1.0)
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -64,7 +61,6 @@ class StudentListViewController: UITableViewController {
             }
     }
 
-
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell : StudentListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "goToScoreReport", for: indexPath) as! StudentListTableViewCell
     
@@ -73,8 +69,6 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
     
         return cell
     }
-
-    
     
     @IBAction func resetRubric(_ sender: Any) {
     

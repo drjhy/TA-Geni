@@ -39,7 +39,6 @@ class StudentViewController: SwipeTableViewController {
     }
     
     
-    
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
@@ -67,12 +66,8 @@ class StudentViewController: SwipeTableViewController {
         guard  let navBarColor = UIColor(hexString: colorHexCode) else {  fatalError()}
         
         navBar.barTintColor  = navBarColor
-        
         navBar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)
-        
         navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ContrastColorOf(navBarColor, returnFlat: true)]
-        
-
         
         //MARK - Customizing SearchBar
         searchBar.layer.borderWidth = 1
@@ -104,19 +99,14 @@ class StudentViewController: SwipeTableViewController {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         if let student = students?[indexPath.row] {
-        
             cell.textLabel?.text = student.name
-            
             
             if let studentColor = UIColor(hexString: selectedCourse!.Color)?.darken(byPercentage: (CGFloat(indexPath.row))/(CGFloat(students!.count))){
                 
                 cell.backgroundColor = studentColor
                 cell.textLabel?.textColor = ContrastColorOf(studentColor, returnFlat: true)
             }
-            
-            
              cell.accessoryType =  student.Graded ? .checkmark  : .none
-        
             
         } else {
             
@@ -143,8 +133,6 @@ class StudentViewController: SwipeTableViewController {
                 }
             }
         }
-    
-
     
     // MARK - Tableview Delegate Methods
     
@@ -469,10 +457,6 @@ extension StudentViewController: UISearchBarDelegate {
                 }
             }
     }
-
-
-
-
 
 }
 

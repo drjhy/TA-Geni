@@ -11,10 +11,9 @@ import RealmSwift
 
 class StudentListTableViewCell: UITableViewCell {
     
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
