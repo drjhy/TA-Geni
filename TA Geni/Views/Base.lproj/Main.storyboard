@@ -44,7 +44,6 @@
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="KWZ-mo-oUb"/>
                         <barButtonItem image="add" id="KBI-QW-TvT" propertyAccessControl="none">
-                            <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="Pwb-24-fuW" id="qwT-z5-wU9"/>
@@ -99,6 +98,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xua-DR-IVF"/>
                         <barButtonItem title="Customize Rubric" image="settings" id="zsT-ci-fbH">
                             <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                             <connections>
@@ -106,7 +106,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ags-oz-aQq"/>
-                        <barButtonItem image="add" id="HMo-XR-blg">
+                        <barButtonItem image="baseline_person_add_black_18dp-40" id="HMo-XR-blg">
                             <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="Hpo-UK-O6r" id="Ka8-dJ-Cj8"/>
@@ -119,12 +119,11 @@
                                 <segue destination="mwM-p2-6rr" kind="show" identifier="goToScoreReport" id="yfw-J6-YIp"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="hDi-ZX-Qbf"/>
-                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="poD-Cs-1CY"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="whV-jX-BC9"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Students" largeTitleDisplayMode="never" id="MiL-sc-Vgm" propertyAccessControl="none">
                         <barButtonItem key="backBarButtonItem" title=" " id="dYH-ej-mzk"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="setting" id="HiX-SS-Aim">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="baseline_group_add_black_18dp-29" id="HiX-SS-Aim">
                             <connections>
                                 <segue destination="Ps6-qS-8HQ" kind="show" identifier="goToMassUpload" id="6iI-Sz-6Uv"/>
                             </connections>
@@ -171,7 +170,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="Paste student names" clearsOnBeginEditing="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="xPX-ON-rIV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="bezel" placeholder="Paste student names" clearsOnBeginEditing="YES" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="xPX-ON-rIV">
                                 <rect key="frame" x="56" y="220" width="250" height="305"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -317,10 +316,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="128" height="128"/>
+        <image name="add" width="20" height="20"/>
+        <image name="baseline_group_add_black_18dp-29" width="29" height="29"/>
+        <image name="baseline_person_add_black_18dp-40" width="40" height="40"/>
         <image name="power" width="128" height="128"/>
-        <image name="rubricIcon" width="1577" height="1577"/>
-        <image name="setting" width="20" height="20"/>
-        <image name="settings" width="128" height="128"/>
+        <image name="rubricIcon" width="20" height="20"/>
+        <image name="settings" width="20" height="20"/>
     </resources>
 </document>

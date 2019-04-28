@@ -392,7 +392,9 @@ class StudentViewController: SwipeTableViewController {
         self.loadStudents()
     })
     // Cancel button
-    let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
+    let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in
+        self.loadStudents()
+    })
 
     // Restyle the view of the Alert
     alert.view.tintColor = UIColor(red:0.07, green:0.08, blue:0.30, alpha:1.0)  // change text color of the buttons
