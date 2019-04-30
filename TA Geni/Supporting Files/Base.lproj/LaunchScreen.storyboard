@@ -18,13 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_0034-2" translatesAutoresizingMaskIntoConstraints="NO" id="XyW-f0-YJW">
-                                <rect key="frame" x="55" y="248" width="264" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0034" translatesAutoresizingMaskIntoConstraints="NO" id="XyW-f0-YJW">
+                                <rect key="frame" x="55" y="279.5" width="265" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XyW-f0-YJW" secondAttribute="height" multiplier="22:9" id="90k-zI-S7B"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.71372549019607845" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="0.70588235290000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="XyW-f0-YJW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Feb-WI-OA5"/>
+                            <constraint firstItem="XyW-f0-YJW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="Kgr-Ba-FdD"/>
+                            <constraint firstItem="XyW-f0-YJW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="N9W-Ec-ddc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -34,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_0034-2" width="772" height="318"/>
+        <image name="IMG_0034" width="772" height="318"/>
     </resources>
 </document>
