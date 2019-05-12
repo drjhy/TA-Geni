@@ -10,7 +10,6 @@ import UIKit
 import RealmSwift
 import ChameleonFramework
 
-
 class MassUploadViewController: UIViewController {
 
     let realm = try! Realm()

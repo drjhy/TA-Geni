@@ -17,7 +17,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="wrk-oq-Gvv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.87450980389999999" green="0.96078431369999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X4I-q8-07j">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="14"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -43,8 +43,9 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="KWZ-mo-oUb"/>
-                        <barButtonItem title="Item" image="add" id="KBI-QW-TvT" propertyAccessControl="none">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <barButtonItem title="AddCourse" image="add" id="KBI-QW-TvT" propertyAccessControl="none">
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                            <color key="tintColor" red="0.87450980389999999" green="0.96078431369999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="Pwb-24-fuW" id="qwT-z5-wU9"/>
                             </connections>
@@ -67,23 +68,27 @@
         <scene sceneID="AKr-He-krN">
             <objects>
                 <tableViewController id="Hpo-UK-O6r" customClass="StudentViewController" customModule="TA_Geni" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qKk-AX-h5q">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qKk-AX-h5q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.87450980392156863" green="0.96078431372549022" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" red="0.87450980392156863" green="0.96078431372549022" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" text="" id="e7H-IV-cLn">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                             <connections>
                                 <outlet property="delegate" destination="Hpo-UK-O6r" id="U3H-h2-SCe"/>
                             </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="11" id="o7n-gh-XY2" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
-                                <rect key="frame" x="0.0" y="72" width="375" height="11"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="11"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o7n-gh-XY2" id="0Yu-jc-0Gc">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="10.5"/>
@@ -121,7 +126,7 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Students" largeTitleDisplayMode="never" id="MiL-sc-Vgm" propertyAccessControl="none">
                         <barButtonItem key="backBarButtonItem" title=" " id="dYH-ej-mzk"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="baseline_group_add_black_18dp-29" id="HiX-SS-Aim">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="baseline_group_add_black_18dp-40" id="HiX-SS-Aim">
                             <connections>
                                 <segue destination="Ps6-qS-8HQ" kind="show" identifier="goToMassUpload" id="6iI-Sz-6Uv"/>
                             </connections>
@@ -267,8 +272,7 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Qn5-CP-6sc"/>
-                        <barButtonItem title="Reset Scores" image="power" id="RvN-QG-ddH">
-                            <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                        <barButtonItem systemItem="trash" id="RvN-QG-ddH">
                             <connections>
                                 <action selector="resetRubric:" destination="mwM-p2-6rr" id="NRV-My-CmX"/>
                             </connections>
@@ -314,11 +318,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="20" height="20"/>
-        <image name="baseline_group_add_black_18dp-29" width="29" height="29"/>
+        <image name="add" width="40" height="40"/>
+        <image name="baseline_group_add_black_18dp-40" width="40" height="40"/>
         <image name="baseline_person_add_black_18dp-40" width="40" height="40"/>
-        <image name="power" width="128" height="128"/>
-        <image name="rubricIcon" width="20" height="20"/>
+        <image name="rubricIcon" width="40" height="40"/>
         <image name="settings" width="20" height="20"/>
     </resources>
 </document>

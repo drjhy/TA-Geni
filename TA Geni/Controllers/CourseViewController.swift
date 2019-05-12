@@ -18,7 +18,6 @@ class CourseListViewController: SwipeTableViewController {
     let realm = try! Realm()
     var courseArray: Results<Course>?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroudNav()
@@ -45,13 +44,14 @@ class CourseListViewController: SwipeTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+       
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if let course = courseArray?[indexPath.row]{
             cell.textLabel?.text = course.name
             guard let courseColor = UIColor(hexString: course.Color) else {fatalError()}
             cell.backgroundColor = courseColor
-            cell.textLabel?.textColor =  ContrastColorOf(courseColor, returnFlat: true)
+            cell.textLabel?.textColor = ContrastColorOf(courseColor, returnFlat: true)
+           
         }
         return cell
     }
@@ -86,6 +86,7 @@ class CourseListViewController: SwipeTableViewController {
     
     func loadCourse () {
         courseArray = realm.objects(Course.self)
+        
         tableView.reloadData()
     }
     
@@ -195,7 +196,6 @@ class CourseListViewController: SwipeTableViewController {
         imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
         imageView.contentMode = .scaleAspectFit
 
-
         navigationItem.titleView = imageView
     }
     
@@ -207,7 +207,6 @@ class CourseListViewController: SwipeTableViewController {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = false
-     
         
         addNavBarImage()
         loadCourse()
@@ -219,8 +218,7 @@ class CourseListViewController: SwipeTableViewController {
         navigationController?.setToolbarHidden(false, animated: false)
         
         getCurrentDateTime()
-
-    
+        
     }
     
     
@@ -244,7 +242,6 @@ class CourseListViewController: SwipeTableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
-    
     
     func studentsForDelection(courseDeleted: String){
         
@@ -290,11 +287,9 @@ class CourseListViewController: SwipeTableViewController {
         labelDate.textAlignment = .left
         labelDate.backgroundColor = UIColor(red:0.18, green:0.57, blue:0.59, alpha:1.0)
 
-        
         let text = formatter.string(from: now)
         labelDate.text = text.uppercased()
     }
+
 }
-
-
 

@@ -14,7 +14,6 @@ class StudentListTableViewCell: UITableViewCell {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +24,4 @@ class StudentListTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

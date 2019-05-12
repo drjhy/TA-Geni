@@ -75,6 +75,7 @@ class StudentViewController: SwipeTableViewController {
         searchBar.barTintColor = navBarColor
         searchBar.placeholder = "Search Students"
         searchBar.setImage(UIImage(), for: .clear, state: .normal)
+        searchBar.delegate = self
         
         // Configure text field
         if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
@@ -401,7 +402,6 @@ class StudentViewController: SwipeTableViewController {
     alert.view.backgroundColor = UIColor.clear  // change background color
     alert.view.layer.cornerRadius = 25   // change corner radius
 
-
     // Add action buttons and present the Alert
     alert.addAction(action1)
     alert.addAction(action2)
@@ -440,26 +440,23 @@ class StudentViewController: SwipeTableViewController {
     }
 
 }
-
     // MARK -- Search bar methods
     
 extension StudentViewController: UISearchBarDelegate {
-  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
             students = students?.filter("name CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
             tableView.reloadData()
-        }
-        
+            view.endEditing(true)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if searchBar.text?.count == 0 {
                 loadStudents()
-                
-                DispatchQueue.main.async {
-                    searchBar.resignFirstResponder()
-                }
-            }
+        
+            view.endEditing(true)
+        }
     }
-
 }
 
 //// Helper function inserted by Swift 4.2 migrator.
@@ -472,7 +469,4 @@ fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [Stri
     guard let input = input else { return nil }
     return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
-
-
-
 
