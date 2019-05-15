@@ -51,11 +51,9 @@ class CourseListViewController: SwipeTableViewController {
             guard let courseColor = UIColor(hexString: course.Color) else {fatalError()}
             cell.backgroundColor = courseColor
             cell.textLabel?.textColor = ContrastColorOf(courseColor, returnFlat: true)
-           
         }
         return cell
     }
-    
     
     //MARK -- TableView Delegate Methods
     
@@ -88,6 +86,7 @@ class CourseListViewController: SwipeTableViewController {
         courseArray = realm.objects(Course.self)
         
         tableView.reloadData()
+       
     }
     
     //    MARK: - Delete Data From Swipe
@@ -119,11 +118,9 @@ class CourseListViewController: SwipeTableViewController {
         DispatchQueue.main.async {
             self.resignFirstResponder()
         }
-        
         var textField = UITextField()
         
         let alert = UIAlertController(title: "Add New Course", message: "", preferredStyle: .alert)
-        
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
             let newCourse = Course()
@@ -137,7 +134,6 @@ class CourseListViewController: SwipeTableViewController {
             alertTextField.placeholder = "Create new course"
             textField = alertTextField
         }
-        
         alert.addAction(action)
         
         // Cancel button
@@ -214,13 +210,12 @@ class CourseListViewController: SwipeTableViewController {
         view.backgroundColor = UIColor(red:0.87, green:0.96, blue:0.95, alpha:1.0)
     
         navigationController?.toolbar.tintColor = ContrastColorOf(color, returnFlat: true)
-        navigationController?.toolbar.barTintColor = UIColor.init(cgColor: color.cgColor)
+        navigationController?.toolbar.barTintColor = UIColor(red:0.18, green:0.57, blue:0.59, alpha:1.0)
         navigationController?.setToolbarHidden(false, animated: false)
         
         getCurrentDateTime()
         
     }
-    
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
@@ -276,7 +271,6 @@ class CourseListViewController: SwipeTableViewController {
     @IBOutlet weak var labelDate: UILabel!
     
     func getCurrentDateTime() {
-        
         
         let now = Date()
         let formatter = DateFormatter()

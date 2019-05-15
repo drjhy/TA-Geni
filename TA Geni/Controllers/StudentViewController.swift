@@ -74,12 +74,13 @@ class StudentViewController: SwipeTableViewController {
         searchBar.layer.borderColor = navBarColor.cgColor
         searchBar.barTintColor = navBarColor
         searchBar.placeholder = "Search Students"
-        searchBar.setImage(UIImage(), for: .clear, state: .normal)
+        searchBar.setImage(UIImage(), for: .clear, state: .highlighted)
         searchBar.delegate = self
         
         // Configure text field
         if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
             textfield.backgroundColor = UIColor(red:0.87, green:0.96, blue:0.95, alpha:1.0)
+            textfield.clearButtonMode = .whileEditing
             textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : ContrastColorOf(navBarColor, returnFlat: true)])
         }
         
@@ -447,13 +448,13 @@ extension StudentViewController: UISearchBarDelegate {
             students = students?.filter("name CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
             tableView.reloadData()
             view.endEditing(true)
+        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if searchBar.text?.count == 0 {
-                loadStudents()
-        
+            loadStudents()
             view.endEditing(true)
         }
     }
