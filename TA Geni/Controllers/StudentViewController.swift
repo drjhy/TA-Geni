@@ -83,7 +83,6 @@ class StudentViewController: SwipeTableViewController {
             textfield.clearButtonMode = .whileEditing
             textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : ContrastColorOf(navBarColor, returnFlat: true)])
         }
-        
         self.navigationController?.isToolbarHidden = false
         self.navigationController?.toolbar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)
         self.navigationController?.toolbar.barTintColor = UIColor.init(cgColor: navBarColor.cgColor)
@@ -445,20 +444,26 @@ class StudentViewController: SwipeTableViewController {
     
 extension StudentViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.text?.isEmpty == false {
+        
             students = students?.filter("name CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
             tableView.reloadData()
             view.endEditing(true)
-        
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        if searchBar.text?.count == 0 {
+        }else{
             loadStudents()
             view.endEditing(true)
         }
     }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            
+            loadStudents()
+            view.endEditing(true)
+            }
+        }
 }
+
 
 //// Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
