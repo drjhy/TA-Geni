@@ -21,6 +21,7 @@
 		A463ED472217494A002984B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A463ED452217494A002984B7 /* Main.storyboard */; };
 		A463ED492217494A002984B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A463ED482217494A002984B7 /* Assets.xcassets */; };
 		A463ED4C2217494A002984B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A463ED4A2217494A002984B7 /* LaunchScreen.storyboard */; };
+		A4CB7621229AEC5400CE6654 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB7620229AEC5400CE6654 /* SettingTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		A463ED482217494A002984B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A463ED4B2217494A002984B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A463ED4D2217494A002984B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4CB7620229AEC5400CE6654 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		EB475DC6AAA3C5A95B50B1E8 /* Pods-TA Geni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.release.xcconfig"; path = "Target Support Files/Pods-TA Geni/Pods-TA Geni.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 		A4277922221752BA004DE559 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4CB7620229AEC5400CE6654 /* SettingTableViewController.swift */,
 				A463ED432217494A002984B7 /* CourseViewController.swift */,
 				A427792E221774DF004DE559 /* StudentViewController.swift */,
 				A41DEDBA2228BC4700A3EDC1 /* StudentListViewController.swift */,
@@ -277,6 +280,7 @@
 				A463ED422217494A002984B7 /* AppDelegate.swift in Sources */,
 				A45B2D7922617444001DBB4B /* MassUploadViewController.swift in Sources */,
 				A41DEDBB2228BC4700A3EDC1 /* StudentListViewController.swift in Sources */,
+				A4CB7621229AEC5400CE6654 /* SettingTableViewController.swift in Sources */,
 				A43F9A4D221AFEE100E37293 /* SwipeTableViewController.swift in Sources */,
 				A42779272217559D004DE559 /* student.swift in Sources */,
 				A41DEDB722277A1100A3EDC1 /* StudentListTableViewCell.swift in Sources */,

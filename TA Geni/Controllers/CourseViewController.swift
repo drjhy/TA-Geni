@@ -15,6 +15,8 @@ var color: UIColor = UIColor(red:0.18, green:0.57, blue:0.59, alpha:1.0)
 
 class CourseListViewController: SwipeTableViewController {
     
+    
+    
     let realm = try! Realm()
     var courseArray: Results<Course>?
     
@@ -55,6 +57,10 @@ class CourseListViewController: SwipeTableViewController {
         return cell
     }
     
+    @IBAction func settingTapped(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "goToSetting", sender: self)
+    }
+    
     //MARK -- TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -62,12 +68,15 @@ class CourseListViewController: SwipeTableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! StudentViewController
+       
+        if segue.identifier == "goToStudent"{
         
-        if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedCourse = courseArray?[indexPath.row]
-        }
-    }
+            let destinationVC = segue.destination as! StudentViewController
+        
+            if let indexPath = tableView.indexPathForSelectedRow {
+                destinationVC.selectedCourse = courseArray?[indexPath.row]
+            }
+        }}
     
     //MARK -- Data Manipulation Methods
     
