@@ -21,7 +21,6 @@ class MassUploadViewController: UIViewController {
     @IBAction func uploadStudents(_ segue: UIStoryboardSegue) {
         
         let stringNames = studentUpload?.text!
-        
         let result = stringNames?.components(separatedBy: ";")
     
         for i in result!.indices {
@@ -49,9 +48,7 @@ class MassUploadViewController: UIViewController {
 }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-    
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

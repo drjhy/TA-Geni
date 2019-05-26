@@ -110,16 +110,12 @@ class StudentViewController: SwipeTableViewController {
              cell.accessoryType =  student.Graded ? .checkmark  : .none
             
         } else {
-            
             cell.textLabel?.text = "No Students Added..."
-            
         }
-        
         return cell
     }
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "goToScoreReport" {
         
         if let segueIdentifier =  SegueIdentifier(rawValue: segue.identifier!) {
                 
@@ -130,7 +126,6 @@ class StudentViewController: SwipeTableViewController {
                 case .SegueToMassUploadViewIdentifier:
                     let controller = segue.destination as! MassUploadViewController
                     controller.selectedCourse = self.selectedCourse
-
                 }
             }
         }
@@ -163,7 +158,6 @@ class StudentViewController: SwipeTableViewController {
 //        copyText(textToCopy: textField.text! as NSString)
 //        textField.text! = pasteText() as String
         
-
     let alert = UIAlertController(title: "Add New Student", message: "", preferredStyle: .alert)
         
             let  action = UIAlertAction(title: "Add", style: .default) { (action) in
@@ -463,7 +457,6 @@ extension StudentViewController: UISearchBarDelegate {
             }
         }
 }
-
 
 //// Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {

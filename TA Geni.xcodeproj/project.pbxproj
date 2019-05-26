@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		234F921FDC47387F01914E7F /* Pods_TA_Geni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241E5FF31CA0FCA26C68BCA5 /* Pods_TA_Geni.framework */; };
 		A41DEDB722277A1100A3EDC1 /* StudentListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41DEDB622277A1100A3EDC1 /* StudentListTableViewCell.swift */; };
 		A41DEDBB2228BC4700A3EDC1 /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41DEDBA2228BC4700A3EDC1 /* StudentListViewController.swift */; };
 		A42779272217559D004DE559 /* student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42779262217559D004DE559 /* student.swift */; };
@@ -20,10 +21,11 @@
 		A463ED472217494A002984B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A463ED452217494A002984B7 /* Main.storyboard */; };
 		A463ED492217494A002984B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A463ED482217494A002984B7 /* Assets.xcassets */; };
 		A463ED4C2217494A002984B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A463ED4A2217494A002984B7 /* LaunchScreen.storyboard */; };
-		E94B975B8A29D03F37E88173 /* Pods_TA_Geni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC8B30A001910A39F908E360 /* Pods_TA_Geni.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		241E5FF31CA0FCA26C68BCA5 /* Pods_TA_Geni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TA_Geni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F9D9700C53F3C66804D43B7 /* Pods-TA Geni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.debug.xcconfig"; path = "Target Support Files/Pods-TA Geni/Pods-TA Geni.debug.xcconfig"; sourceTree = "<group>"; };
 		A41DEDB622277A1100A3EDC1 /* StudentListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListTableViewCell.swift; sourceTree = "<group>"; };
 		A41DEDBA2228BC4700A3EDC1 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudentListViewController.swift; path = "/Users/johnyoung/Desktop/TA Geni/TA Geni/Controllers/StudentListViewController.swift"; sourceTree = "<absolute>"; };
 		A42779262217559D004DE559 /* student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = student.swift; sourceTree = "<group>"; };
@@ -39,9 +41,7 @@
 		A463ED482217494A002984B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A463ED4B2217494A002984B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A463ED4D2217494A002984B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B61D76F6227D83F231D18C4A /* Pods-TA Geni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.debug.xcconfig"; path = "Target Support Files/Pods-TA Geni/Pods-TA Geni.debug.xcconfig"; sourceTree = "<group>"; };
-		BC0461DE2607403CD4A68210 /* Pods-TA Geni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.release.xcconfig"; path = "Target Support Files/Pods-TA Geni/Pods-TA Geni.release.xcconfig"; sourceTree = "<group>"; };
-		BC8B30A001910A39F908E360 /* Pods_TA_Geni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TA_Geni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB475DC6AAA3C5A95B50B1E8 /* Pods-TA Geni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.release.xcconfig"; path = "Target Support Files/Pods-TA Geni/Pods-TA Geni.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,13 +49,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E94B975B8A29D03F37E88173 /* Pods_TA_Geni.framework in Frameworks */,
+				234F921FDC47387F01914E7F /* Pods_TA_Geni.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DC6285D3553FEF5A4E08129 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				241E5FF31CA0FCA26C68BCA5 /* Pods_TA_Geni.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A4277922221752BA004DE559 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +110,7 @@
 				A463ED402217494A002984B7 /* TA Geni */,
 				A463ED3F2217494A002984B7 /* Products */,
 				E3CBAC93CD31720EE7667A6C /* Pods */,
-				E212B15BF8CB9DA76EEFA0FA /* Frameworks */,
+				5DC6285D3553FEF5A4E08129 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,19 +135,11 @@
 			path = "TA Geni";
 			sourceTree = "<group>";
 		};
-		E212B15BF8CB9DA76EEFA0FA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BC8B30A001910A39F908E360 /* Pods_TA_Geni.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E3CBAC93CD31720EE7667A6C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B61D76F6227D83F231D18C4A /* Pods-TA Geni.debug.xcconfig */,
-				BC0461DE2607403CD4A68210 /* Pods-TA Geni.release.xcconfig */,
+				4F9D9700C53F3C66804D43B7 /* Pods-TA Geni.debug.xcconfig */,
+				EB475DC6AAA3C5A95B50B1E8 /* Pods-TA Geni.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -151,11 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A463ED502217494A002984B7 /* Build configuration list for PBXNativeTarget "TA Geni" */;
 			buildPhases = (
-				67EFD29D4F7DDC5F3F114A82 /* [CP] Check Pods Manifest.lock */,
+				AC713A56034895B1815C1C4D /* [CP] Check Pods Manifest.lock */,
 				A463ED3A2217494A002984B7 /* Sources */,
 				A463ED3B2217494A002984B7 /* Frameworks */,
 				A463ED3C2217494A002984B7 /* Resources */,
-				92CD6B9B20254B04FF6F9C28 /* [CP] Embed Pods Frameworks */,
+				94E4A79732DB8AF621593AB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,29 +213,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		67EFD29D4F7DDC5F3F114A82 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TA Geni-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		92CD6B9B20254B04FF6F9C28 /* [CP] Embed Pods Frameworks */ = {
+		94E4A79732DB8AF621593AB8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -261,6 +239,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TA Geni/Pods-TA Geni-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC713A56034895B1815C1C4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TA Geni-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -425,7 +425,7 @@
 		};
 		A463ED512217494A002984B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B61D76F6227D83F231D18C4A /* Pods-TA Geni.debug.xcconfig */;
+			baseConfigurationReference = 4F9D9700C53F3C66804D43B7 /* Pods-TA Geni.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -446,7 +446,7 @@
 		};
 		A463ED522217494A002984B7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC0461DE2607403CD4A68210 /* Pods-TA Geni.release.xcconfig */;
+			baseConfigurationReference = EB475DC6AAA3C5A95B50B1E8 /* Pods-TA Geni.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

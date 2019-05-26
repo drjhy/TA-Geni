@@ -9,7 +9,6 @@
 import UIKit
 import RealmSwift
 
-
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,15 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if (oldSchemaVersion < 1) {
             }
         })
-
         Realm.Configuration.defaultConfiguration = config
 
         _ = try! Realm()
 
-
         return true
     }
-
 }
 
 

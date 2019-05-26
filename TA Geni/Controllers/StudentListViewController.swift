@@ -30,13 +30,10 @@ class StudentListViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
         queryStudents()
-        
     }
     
-    // MARK: - Table view data source
-
+    // MARK: - Table view data sourc
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

@@ -44,7 +44,7 @@
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="KWZ-mo-oUb"/>
                         <barButtonItem title="AddCourse" image="add" id="KBI-QW-TvT" propertyAccessControl="none">
-                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                            <inset key="imageInsets" minX="0.0" minY="8" maxX="15" maxY="0.0"/>
                             <color key="tintColor" red="0.87450980389999999" green="0.96078431369999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="Pwb-24-fuW" id="qwT-z5-wU9"/>
@@ -104,21 +104,21 @@
                     </tableView>
                     <toolbarItems>
                         <barButtonItem title="Customize Rubric" image="settings" id="zsT-ci-fbH">
-                            <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageInsets" minX="10" minY="8" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <action selector="customizeRubric:" destination="Hpo-UK-O6r" id="waH-g3-mL6"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="ags-oz-aQq"/>
                         <barButtonItem image="baseline_person_add_black_18dp-40" id="HMo-XR-blg">
-                            <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageInsets" minX="0.0" minY="9" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="Hpo-UK-O6r" id="Ka8-dJ-Cj8"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="jrY-zb-8ib"/>
                         <barButtonItem title="Marks" image="rubricIcon" id="P2w-EG-JrN">
-                            <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageInsets" minX="0.0" minY="9" maxX="10" maxY="0.0"/>
                             <connections>
                                 <segue destination="mwM-p2-6rr" kind="show" identifier="goToScoreReport" id="yfw-J6-YIp"/>
                             </connections>
@@ -127,6 +127,7 @@
                     <navigationItem key="navigationItem" title="Students" largeTitleDisplayMode="never" id="MiL-sc-Vgm" propertyAccessControl="none">
                         <barButtonItem key="backBarButtonItem" title=" " id="dYH-ej-mzk"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="baseline_group_add_black_18dp-40" id="HiX-SS-Aim">
+                            <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <segue destination="Ps6-qS-8HQ" kind="show" identifier="goToMassUpload" id="6iI-Sz-6Uv"/>
                             </connections>
