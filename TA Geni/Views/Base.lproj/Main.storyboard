@@ -21,24 +21,28 @@
                         <sections>
                             <tableViewSection headerTitle="Feedback &amp; Support" id="Az5-dl-F3e">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="m1P-Zo-Nff">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="m1P-Zo-Nff">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1P-Zo-Nff" id="5m4-dV-3Xv">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lp-BF-pVW">
-                                                    <rect key="frame" x="16" y="11.5" width="66" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcJ-aI-tqC">
+                                                    <rect key="frame" x="16" y="6" width="317" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="Email Us">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="emailTapped:" destination="52d-fr-XPa" eventType="touchUpInside" id="cIh-G3-yp7"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="5lp-BF-pVW" secondAttribute="trailing" constant="211" id="6A1-xa-2Vi"/>
-                                                <constraint firstItem="5lp-BF-pVW" firstAttribute="leading" secondItem="5m4-dV-3Xv" secondAttribute="leadingMargin" id="K9G-eX-no6"/>
-                                                <constraint firstItem="5lp-BF-pVW" firstAttribute="centerY" secondItem="5m4-dV-3Xv" secondAttribute="centerY" id="jW2-Az-7eT"/>
+                                                <constraint firstAttribute="trailing" secondItem="gcJ-aI-tqC" secondAttribute="trailing" constant="8" id="FFS-mC-8gV"/>
+                                                <constraint firstItem="gcJ-aI-tqC" firstAttribute="leading" secondItem="5m4-dV-3Xv" secondAttribute="leading" constant="16" id="YkP-Eb-0y3"/>
+                                                <constraint firstItem="gcJ-aI-tqC" firstAttribute="centerY" secondItem="5m4-dV-3Xv" secondAttribute="centerY" id="m6e-Vl-YsW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -50,17 +54,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report a Bug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcA-ma-62k">
-                                                    <rect key="frame" x="16" y="11.5" width="100" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8A-sm-W8V">
+                                                    <rect key="frame" x="16" y="6" width="317" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="Report a Bug">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="bugTapped:" destination="52d-fr-XPa" eventType="touchUpInside" id="58a-cT-1Ys"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="AcA-ma-62k" secondAttribute="trailing" constant="182" id="A9n-LE-phx"/>
-                                                <constraint firstItem="AcA-ma-62k" firstAttribute="centerY" secondItem="M8J-bb-gIA" secondAttribute="centerY" id="GhS-Aj-22A"/>
-                                                <constraint firstItem="AcA-ma-62k" firstAttribute="leading" secondItem="M8J-bb-gIA" secondAttribute="leadingMargin" id="WC3-0a-F66"/>
+                                                <constraint firstItem="B8A-sm-W8V" firstAttribute="leading" secondItem="M8J-bb-gIA" secondAttribute="leading" constant="16" id="AIc-4u-Wqy"/>
+                                                <constraint firstAttribute="trailing" secondItem="B8A-sm-W8V" secondAttribute="trailing" constant="8" id="Z5t-5X-tId"/>
+                                                <constraint firstItem="B8A-sm-W8V" firstAttribute="centerY" secondItem="M8J-bb-gIA" secondAttribute="centerY" id="u3K-0G-CxG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
@@ -190,7 +198,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCf-XX-GOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480.8" y="-2393.2533733133437"/>
+            <point key="canvasLocation" x="1470" y="-2399"/>
         </scene>
         <!-- -->
         <scene sceneID="nMO-tc-e2a">
