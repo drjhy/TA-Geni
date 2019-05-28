@@ -106,17 +106,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Our App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEz-XL-FWL">
-                                                    <rect key="frame" x="16" y="11.5" width="123" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aON-Yo-Gho">
+                                                    <rect key="frame" x="16" y="6" width="317" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="Review Our App">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="reviewTapped:" destination="52d-fr-XPa" eventType="touchUpInside" id="cd9-Sr-fjR"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="yEz-XL-FWL" firstAttribute="leading" secondItem="3iq-bD-8WU" secondAttribute="leadingMargin" id="IYR-hx-fLu"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="yEz-XL-FWL" secondAttribute="trailing" constant="144" id="d1U-iB-Uqw"/>
-                                                <constraint firstItem="yEz-XL-FWL" firstAttribute="centerY" secondItem="3iq-bD-8WU" secondAttribute="centerY" id="wvZ-9H-ask"/>
+                                                <constraint firstItem="aON-Yo-Gho" firstAttribute="centerY" secondItem="3iq-bD-8WU" secondAttribute="centerY" id="6ov-1n-Ohd"/>
+                                                <constraint firstItem="aON-Yo-Gho" firstAttribute="leading" secondItem="3iq-bD-8WU" secondAttribute="leading" constant="16" id="Pgw-NO-j7V"/>
+                                                <constraint firstAttribute="trailing" secondItem="aON-Yo-Gho" secondAttribute="trailing" constant="8" id="zVZ-Te-cPh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -127,17 +131,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share Our App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fg2-Y5-cCd">
-                                                    <rect key="frame" x="16" y="11.5" width="112.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJK-Kn-2l7">
+                                                    <rect key="frame" x="16" y="6" width="317" height="32"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="Share Our App">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="shareTapped:" destination="52d-fr-XPa" eventType="touchUpInside" id="eg4-OD-tPM"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Fg2-Y5-cCd" firstAttribute="leading" secondItem="eDG-vW-Eb4" secondAttribute="leadingMargin" id="BEL-hI-UYU"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Fg2-Y5-cCd" secondAttribute="trailing" constant="182" id="Imk-ZP-Qhu"/>
-                                                <constraint firstItem="Fg2-Y5-cCd" firstAttribute="centerY" secondItem="eDG-vW-Eb4" secondAttribute="centerY" id="wQ7-YA-uqG"/>
+                                                <constraint firstItem="EJK-Kn-2l7" firstAttribute="centerY" secondItem="eDG-vW-Eb4" secondAttribute="centerY" id="njI-nn-taF"/>
+                                                <constraint firstAttribute="trailing" secondItem="EJK-Kn-2l7" secondAttribute="trailing" constant="8" id="pVc-Xu-EaP"/>
+                                                <constraint firstItem="EJK-Kn-2l7" firstAttribute="leading" secondItem="eDG-vW-Eb4" secondAttribute="leading" constant="16" id="x9i-NU-tI9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -158,11 +166,19 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnl-Yx-QJ8">
+                                                    <rect key="frame" x="317" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="VVN-IB-BYU" firstAttribute="leading" secondItem="hNq-Cc-bX6" secondAttribute="leadingMargin" id="ZLl-PW-BZ2"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="VVN-IB-BYU" secondAttribute="trailing" constant="286" id="giI-bR-R31"/>
-                                                <constraint firstItem="VVN-IB-BYU" firstAttribute="centerY" secondItem="hNq-Cc-bX6" secondAttribute="centerY" id="nq5-v9-162"/>
+                                                <constraint firstItem="xnl-Yx-QJ8" firstAttribute="leading" secondItem="VVN-IB-BYU" secondAttribute="trailing" constant="244" id="3YM-Gx-F1w"/>
+                                                <constraint firstItem="xnl-Yx-QJ8" firstAttribute="trailing" secondItem="hNq-Cc-bX6" secondAttribute="trailingMargin" id="7Nx-K9-NwK"/>
+                                                <constraint firstItem="xnl-Yx-QJ8" firstAttribute="centerY" secondItem="hNq-Cc-bX6" secondAttribute="centerY" id="mFC-rQ-rxU"/>
+                                                <constraint firstItem="VVN-IB-BYU" firstAttribute="centerY" secondItem="hNq-Cc-bX6" secondAttribute="centerY" id="os8-Vy-SQy"/>
+                                                <constraint firstItem="VVN-IB-BYU" firstAttribute="leading" secondItem="hNq-Cc-bX6" secondAttribute="leadingMargin" id="r1v-BL-czF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -179,11 +195,19 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUV-Hf-q5I">
+                                                    <rect key="frame" x="317" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="eWg-nr-ooe" firstAttribute="centerY" secondItem="Xrf-1t-7Vz" secondAttribute="centerY" id="3UE-LR-g3K"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="eWg-nr-ooe" secondAttribute="trailing" constant="304" id="DJX-lU-NEg"/>
-                                                <constraint firstItem="eWg-nr-ooe" firstAttribute="leading" secondItem="Xrf-1t-7Vz" secondAttribute="leadingMargin" id="lv1-pH-BQA"/>
+                                                <constraint firstItem="cUV-Hf-q5I" firstAttribute="trailing" secondItem="Xrf-1t-7Vz" secondAttribute="trailingMargin" id="3tg-vj-9nV"/>
+                                                <constraint firstItem="cUV-Hf-q5I" firstAttribute="leading" secondItem="eWg-nr-ooe" secondAttribute="trailing" constant="262" id="CXe-RV-ZLe"/>
+                                                <constraint firstItem="cUV-Hf-q5I" firstAttribute="centerY" secondItem="Xrf-1t-7Vz" secondAttribute="centerY" id="QD2-rn-6ib"/>
+                                                <constraint firstItem="eWg-nr-ooe" firstAttribute="centerY" secondItem="Xrf-1t-7Vz" secondAttribute="centerY" id="VqZ-WL-ktD"/>
+                                                <constraint firstItem="eWg-nr-ooe" firstAttribute="leading" secondItem="Xrf-1t-7Vz" secondAttribute="leadingMargin" id="zRz-T7-t2D"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -195,10 +219,14 @@
                             <outlet property="delegate" destination="52d-fr-XPa" id="Cii-as-cxh"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="appVersion" destination="xnl-Yx-QJ8" id="zJz-jF-sJ2"/>
+                        <outlet property="buildVersion" destination="cUV-Hf-q5I" id="X25-Yr-0b2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JCf-XX-GOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="-2399"/>
+            <point key="canvasLocation" x="1469.5999999999999" y="-2399.5502248875564"/>
         </scene>
         <!-- -->
         <scene sceneID="nMO-tc-e2a">

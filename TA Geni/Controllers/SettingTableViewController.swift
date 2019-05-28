@@ -16,18 +16,22 @@ class SettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackgroudNav()
+        versionUpdates()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setBackgroudNav()
+        versionUpdates()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setBackgroudNav()
+        versionUpdates()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         setBackgroudNav()
+        versionUpdates()
     }
     // MARK: - Table view data source
 //
@@ -49,12 +53,25 @@ class SettingTableViewController: UITableViewController {
 
     @IBAction func bugTapped(_ sender: Any) {
         bugEmail()
+    }    
+    
+    @IBOutlet weak var appVersion: UILabel!
+    
+    @IBOutlet weak var buildVersion: UILabel!
+    
+    @IBAction func reviewTapped(_ sender: Any) {
+        SKStoreReviewController.requestReview()
     }
     
+    @IBAction func shareTapped(_ sender: Any) {
+        ShareApp()
+    }
     
-    
-    
-    
+    func ShareApp() {
+        let items:[Any] = ["Easy and Simple solution at your fingertips is the Virtual Teaching Assistant. Two-touch real-time grading system. Hire your next teaching assistant today. Download  https://itunes.apple.com/in/app/TA-GeNi-app/id99999999999?mt=8"]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        self.present(ac, animated: true)
+    }
     
     func sendEmail() {
         guard MFMailComposeViewController.canSendMail() else { return}
@@ -103,11 +120,18 @@ extension SettingTableViewController: MFMailComposeViewControllerDelegate {
 }
 
 extension Bundle {
-    static var appVersion: String? {
-        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+    static var appVersion: String {
+        return (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String)!
     }
-    static var buildVersion: String? {
-        return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String
+    static var buildVersion: String {
+        return (Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String)!
     }
-
 }
+
+private extension SettingTableViewController {
+    func versionUpdates() {
+        appVersion.text = String(describing: Bundle.appVersion)
+        buildVersion.text = String(describing: Bundle.buildVersion)
+    }
+}
+
