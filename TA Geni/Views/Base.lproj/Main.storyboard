@@ -268,6 +268,7 @@
                     <toolbarItems>
                         <barButtonItem title="Setting" image="iconsSettings" id="1nA-Hw-K20">
                             <inset key="imageInsets" minX="15" minY="8" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="settingTapped:" destination="Pwb-24-fuW" id="cCr-A1-SB4"/>
                                 <segue destination="52d-fr-XPa" kind="show" identifier="goToSetting" id="cpM-NG-WzJ"/>
@@ -276,7 +277,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="KWZ-mo-oUb"/>
                         <barButtonItem title="AddCourse" image="add" id="KBI-QW-TvT" propertyAccessControl="none">
                             <inset key="imageInsets" minX="0.0" minY="8" maxX="15" maxY="0.0"/>
-                            <color key="tintColor" red="0.87450980389999999" green="0.96078431369999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="Pwb-24-fuW" id="qwT-z5-wU9"/>
                             </connections>
@@ -463,14 +464,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scoreLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1h-VR-qYf">
-                                            <rect key="frame" x="275" y="11.5" width="84" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLz-vT-MFz">
+                                            <rect key="frame" x="16" y="11.5" width="343" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLz-vT-MFz">
-                                            <rect key="frame" x="16" y="11.5" width="84" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scoreLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1h-VR-qYf">
+                                            <rect key="frame" x="275" y="11.5" width="84" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -478,12 +479,12 @@
                                     </subviews>
                                     <color key="tintColor" red="0.80784313725490198" green="0.97647058823529409" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstItem="a1h-VR-qYf" firstAttribute="leading" secondItem="PLz-vT-MFz" secondAttribute="trailing" constant="175" id="53G-2G-X8T"/>
-                                        <constraint firstItem="a1h-VR-qYf" firstAttribute="centerY" secondItem="bvX-h0-Pfr" secondAttribute="centerY" id="ABi-hq-sgW"/>
-                                        <constraint firstItem="a1h-VR-qYf" firstAttribute="trailing" secondItem="bvX-h0-Pfr" secondAttribute="trailingMargin" id="OoF-dh-7Wv"/>
-                                        <constraint firstItem="PLz-vT-MFz" firstAttribute="leading" secondItem="bvX-h0-Pfr" secondAttribute="leading" constant="16" id="XE0-bX-zVY"/>
-                                        <constraint firstItem="PLz-vT-MFz" firstAttribute="centerY" secondItem="bvX-h0-Pfr" secondAttribute="centerY" id="bdw-XT-GHu"/>
-                                        <constraint firstItem="a1h-VR-qYf" firstAttribute="leading" secondItem="PLz-vT-MFz" secondAttribute="trailing" constant="175" id="wox-3F-4QS"/>
+                                        <constraint firstItem="a1h-VR-qYf" firstAttribute="centerY" secondItem="bvX-h0-Pfr" secondAttribute="centerY" id="Fe5-Fy-VLM"/>
+                                        <constraint firstItem="a1h-VR-qYf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bvX-h0-Pfr" secondAttribute="leading" constant="275" id="LlZ-Mf-h1G"/>
+                                        <constraint firstItem="PLz-vT-MFz" firstAttribute="centerX" secondItem="bvX-h0-Pfr" secondAttribute="centerX" id="UT0-Yz-9eM"/>
+                                        <constraint firstAttribute="trailing" secondItem="a1h-VR-qYf" secondAttribute="trailing" constant="16" id="mOY-Nu-mxm"/>
+                                        <constraint firstItem="PLz-vT-MFz" firstAttribute="centerY" secondItem="bvX-h0-Pfr" secondAttribute="centerY" id="o89-Q2-wGy"/>
+                                        <constraint firstItem="PLz-vT-MFz" firstAttribute="leading" secondItem="bvX-h0-Pfr" secondAttribute="leadingMargin" id="sZd-3H-t9S"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="0.28627450980392155" green="0.29803921568627451" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>

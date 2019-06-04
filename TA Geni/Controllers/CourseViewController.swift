@@ -15,8 +15,6 @@ var color: UIColor = UIColor(red:0.18, green:0.57, blue:0.59, alpha:1.0)
 
 class CourseListViewController: SwipeTableViewController {
     
-    
-    
     let realm = try! Realm()
     var courseArray: Results<Course>?
     
@@ -160,27 +158,28 @@ class CourseListViewController: SwipeTableViewController {
     func setColorCode(rowColorSet: UIColor) -> UIColor{
         
         var colorCount = courseArray?.count
-        print(courseArray?.count as Any)
+        print(colorCount as Any)
         let color1 = UIColor(red:0.27, green:0.72, blue:0.73, alpha:1.0)
-        let color2 = color1.lighten(byPercentage: 0.2)
-        let color3 = color2!.lighten(byPercentage: 0.2)
-        let color4 = color3!.lighten(byPercentage: 0.2)
-        let color5 = color4!.lighten(byPercentage: 0.2)
-        let color6 = color5!.lighten(byPercentage: 0.2)
-        let color7 = color6!.lighten(byPercentage: 0.2)
-        let color8 = color7!.lighten(byPercentage: 0.2)
-        let color9 = color8!.lighten(byPercentage: 0.2)
-        let color10 = color9!.lighten(byPercentage: 0.2)
+        let color2 = color1.lighten(byPercentage: 0.1)
+        let color3 = color2!.lighten(byPercentage: 0.1)
+        let color4 = color3!.lighten(byPercentage: 0.1)
+        let color5 = color4!.lighten(byPercentage: 0.1)
+        let color6 = color5!.lighten(byPercentage: 0.1)
+        let color7 = color6!.lighten(byPercentage: 0.1)
+        let color8 = color7!.lighten(byPercentage: 0.1)
+        let color9 = color8!.lighten(byPercentage: 0.1)
+        let color10 = color9!.lighten(byPercentage: 0.1)
         
         if colorCount! == 1 { colorCount = 1; color = color1; return color
-        } else if colorCount == 2 { colorCount = 3; color = color3!; return color
-        } else if colorCount == 3 { colorCount = 4; color = color4!; return color
-        } else if colorCount == 4 { colorCount = 5; color = color5!; return color
-        } else if colorCount == 5 { colorCount = 6; color = color6!; return color
-        } else if colorCount == 6 { colorCount = 7; color = color7!; return color
-        } else if colorCount == 7 { colorCount = 8; color = color8!; return color
-        } else if colorCount == 8 { colorCount = 9; color = color9!; return color
-        } else { colorCount = 9; color = color10!; return color
+        } else if colorCount! == 2 { colorCount = 2; color = color2!; return color
+        } else if colorCount! == 3 { colorCount = 3; color = color3!; return color
+        } else if colorCount! == 4 { colorCount = 4; color = color4!; return color
+        } else if colorCount! == 5 { colorCount = 5; color = color5!; return color
+        } else if colorCount! == 6 { colorCount = 6; color = color6!; return color
+        } else if colorCount! == 7 { colorCount = 7; color = color7!; return color
+        } else if colorCount! == 8 { colorCount = 8; color = color8!; return color
+        } else if colorCount! == 9 { colorCount = 9; color = color9!; return color
+        } else { colorCount = 10; color = color10!; return color
         }
     }
   
