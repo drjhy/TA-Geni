@@ -162,18 +162,17 @@ class CourseListViewController: SwipeTableViewController {
         var colorCount = courseArray?.count
         print(courseArray?.count as Any)
         let color1 = UIColor(red:0.27, green:0.72, blue:0.73, alpha:1.0)
-        let color2 = color1.lighten(byPercentage: 0.1)
-        let color3 = color2!.lighten(byPercentage: 0.1)
-        let color4 = color3!.lighten(byPercentage: 0.1)
-        let color5 = color4!.lighten(byPercentage: 0.1)
-        let color6 = color5!.lighten(byPercentage: 0.1)
-        let color7 = color6!.lighten(byPercentage: 0.1)
-        let color8 = color7!.lighten(byPercentage: 0.1)
-        let color9 = color8!.lighten(byPercentage: 0.1)
-        let color10 = color9!.lighten(byPercentage: 0.1)
+        let color2 = color1.lighten(byPercentage: 0.2)
+        let color3 = color2!.lighten(byPercentage: 0.2)
+        let color4 = color3!.lighten(byPercentage: 0.2)
+        let color5 = color4!.lighten(byPercentage: 0.2)
+        let color6 = color5!.lighten(byPercentage: 0.2)
+        let color7 = color6!.lighten(byPercentage: 0.2)
+        let color8 = color7!.lighten(byPercentage: 0.2)
+        let color9 = color8!.lighten(byPercentage: 0.2)
+        let color10 = color9!.lighten(byPercentage: 0.2)
         
-        if colorCount == 0 { colorCount = 1; color = color1; return color
-        } else if colorCount == 1 { colorCount = 2; color = color2!; return color
+        if colorCount! == 1 { colorCount = 1; color = color1; return color
         } else if colorCount == 2 { colorCount = 3; color = color3!; return color
         } else if colorCount == 3 { colorCount = 4; color = color4!; return color
         } else if colorCount == 4 { colorCount = 5; color = color5!; return color
@@ -181,7 +180,7 @@ class CourseListViewController: SwipeTableViewController {
         } else if colorCount == 6 { colorCount = 7; color = color7!; return color
         } else if colorCount == 7 { colorCount = 8; color = color8!; return color
         } else if colorCount == 8 { colorCount = 9; color = color9!; return color
-        } else { colorCount = 0; color = color10!; return color
+        } else { colorCount = 9; color = color10!; return color
         }
     }
   
