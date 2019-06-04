@@ -9,6 +9,7 @@
 import UIKit
 import StoreKit
 import MessageUI
+import SafariServices
 import ChameleonFramework
 
 class SettingTableViewController: UITableViewController {
@@ -33,19 +34,6 @@ class SettingTableViewController: UITableViewController {
         setBackgroudNav()
         versionUpdates()
     }
-    // MARK: - Table view data source
-//
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 3
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-    
-    
     
     @IBAction func emailTapped(_ sender: Any) {
         sendEmail()
@@ -55,22 +43,37 @@ class SettingTableViewController: UITableViewController {
         bugEmail()
     }    
     
-    @IBOutlet weak var appVersion: UILabel!
+    @IBAction func ideaRequest(_ sender: Any) {
+        IdeaFeatureRequest()
+    }
     
+    @IBOutlet weak var appVersion: UILabel!
     @IBOutlet weak var buildVersion: UILabel!
     
     @IBAction func reviewTapped(_ sender: Any) {
         SKStoreReviewController.requestReview()
     }
-    
-    @IBAction func shareTapped(_ sender: Any) {
-        ShareApp()
+    @IBAction func shareTapped(_ sender: UIButton) {
+      ShareApp()
+    }
+   
+    func IdeaFeatureRequest() {
+        if let url = URL(string: "https://tageni.youngdynasty.com/feature-request/") {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
     }
     
     func ShareApp() {
-        let items:[Any] = ["Easy and Simple solution at your fingertips is the Virtual Teaching Assistant. Two-touch real-time grading system. Hire your next teaching assistant today. Download  https://itunes.apple.com/in/app/TA-GeNi-app/id99999999999?mt=8"]
+
+        let items:[Any] = ["Easy and Simple solution at your fingertips. Two-touch real-time grading system. Hire your next teaching assistant today. Download  https://itunes.apple.com/in/app/TA-GeNi-app/com.youngdynasty.com.TA-Geni mt=8"]
+
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        self.present(ac, animated: true)
+            ac.popoverPresentationController?.sourceView = self.view
+            present(ac, animated: true, completion: nil)
     }
     
     func sendEmail() {
@@ -104,8 +107,10 @@ class SettingTableViewController: UITableViewController {
     }
     
     func setBackgroudNav(){
+        
+        navigationController?.navigationBar.tintColor = UIColor.black
         navigationController?.navigationBar.barTintColor = UIColor(red:0.18, green:0.57, blue:0.59, alpha:1.0)
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black, .font: UIFont(name: "HelveticaNeue-Medium", size: 20)!]
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = false
     }

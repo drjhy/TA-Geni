@@ -22,7 +22,7 @@ class StudentListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    self.tableView.rowHeight = 44
     tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     tableView.separatorColor = UIColor.flatGreen
     view.backgroundColor = UIColor(red:0.96, green:0.98, blue:0.96, alpha:1.0)
