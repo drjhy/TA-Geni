@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -184,7 +184,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A463ED392217494A002984B7 /* Build configuration list for PBXProject "TA Geni" */;
+			buildConfigurationList = A463ED392217494A002984B7 /* Build configuration list for PBXProject "TA GENI" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -222,11 +222,9 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TA Geni/Pods-TA Geni-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TA Geni/Pods-TA Geni-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -464,7 +462,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A463ED392217494A002984B7 /* Build configuration list for PBXProject "TA Geni" */ = {
+		A463ED392217494A002984B7 /* Build configuration list for PBXProject "TA GENI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A463ED4E2217494A002984B7 /* Debug */,
