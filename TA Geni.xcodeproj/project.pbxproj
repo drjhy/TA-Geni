@@ -184,7 +184,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A463ED392217494A002984B7 /* Build configuration list for PBXProject "TA GENI" */;
+			buildConfigurationList = A463ED392217494A002984B7 /* Build configuration list for PBXProject "TA Geni" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -462,7 +462,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A463ED392217494A002984B7 /* Build configuration list for PBXProject "TA GENI" */ = {
+		A463ED392217494A002984B7 /* Build configuration list for PBXProject "TA Geni" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A463ED4E2217494A002984B7 /* Debug */,
