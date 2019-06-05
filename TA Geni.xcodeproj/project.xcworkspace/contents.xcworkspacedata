@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TA Geni.xcodeproj">
+      location = "group:../Pods">
+   </FileRef>
+   <FileRef
+      location = "group:../Podfile">
+   </FileRef>
+   <FileRef
+      location = "group:../Podfile.lock">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

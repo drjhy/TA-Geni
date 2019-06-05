@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,7 +27,6 @@
 /* Begin PBXFileReference section */
 		241E5FF31CA0FCA26C68BCA5 /* Pods_TA_Geni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TA_Geni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9D9700C53F3C66804D43B7 /* Pods-TA Geni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.debug.xcconfig"; path = "Target Support Files/Pods-TA Geni/Pods-TA Geni.debug.xcconfig"; sourceTree = "<group>"; };
-		A4058F5B22A761E400316FDB /* Realm */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Realm; path = Pods/RealmSwift/Realm; sourceTree = "<group>"; };
 		A41DEDB622277A1100A3EDC1 /* StudentListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListTableViewCell.swift; sourceTree = "<group>"; };
 		A41DEDBA2228BC4700A3EDC1 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudentListViewController.swift; path = "/Users/johnyoung/Desktop/TA Geni/TA Geni/Controllers/StudentListViewController.swift"; sourceTree = "<absolute>"; };
 		A42779262217559D004DE559 /* student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = student.swift; sourceTree = "<group>"; };
@@ -62,7 +61,6 @@
 		5DC6285D3553FEF5A4E08129 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A4058F5B22A761E400316FDB /* Realm */,
 				241E5FF31CA0FCA26C68BCA5 /* Pods_TA_Geni.framework */,
 			);
 			name = Frameworks;
