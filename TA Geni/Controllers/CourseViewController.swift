@@ -160,26 +160,26 @@ class CourseListViewController: SwipeTableViewController {
         var colorCount = courseArray?.count
         print(colorCount as Any)
         let color1 = UIColor(red:0.27, green:0.72, blue:0.73, alpha:1.0)
-        let color2 = color1.lighten(byPercentage: 0.1)
-        let color3 = color2!.lighten(byPercentage: 0.1)
-        let color4 = color3!.lighten(byPercentage: 0.1)
-        let color5 = color4!.lighten(byPercentage: 0.1)
-        let color6 = color5!.lighten(byPercentage: 0.1)
-        let color7 = color6!.lighten(byPercentage: 0.1)
-        let color8 = color7!.lighten(byPercentage: 0.1)
-        let color9 = color8!.lighten(byPercentage: 0.1)
-        let color10 = color9!.lighten(byPercentage: 0.1)
+        let color2 = color1.lighter(by: 10)
+        let color3 = color2.lighter(by: 10)
+        let color4 = color3.lighter(by: 10)
+        let color5 = color4.lighter(by: 10)
+        let color6 = color5.lighter(by: 10)
+        let color7 = color6.lighter(by: 10)
+        let color8 = color7.lighter(by: 10)
+        let color9 = color8.lighter(by: 10)
+        let color10 = color9.lighter(by: 10)
         
         if colorCount! == 1 { colorCount = 1; color = color1; return color
-        } else if colorCount! == 2 { colorCount = 2; color = color2!; return color
-        } else if colorCount! == 3 { colorCount = 3; color = color3!; return color
-        } else if colorCount! == 4 { colorCount = 4; color = color4!; return color
-        } else if colorCount! == 5 { colorCount = 5; color = color5!; return color
-        } else if colorCount! == 6 { colorCount = 6; color = color6!; return color
-        } else if colorCount! == 7 { colorCount = 7; color = color7!; return color
-        } else if colorCount! == 8 { colorCount = 8; color = color8!; return color
-        } else if colorCount! == 9 { colorCount = 9; color = color9!; return color
-        } else { colorCount = 10; color = color10!; return color
+        } else if colorCount! == 2 { colorCount = 2; color = color2; return color
+        } else if colorCount! == 3 { colorCount = 3; color = color3; return color
+        } else if colorCount! == 4 { colorCount = 4; color = color4; return color
+        } else if colorCount! == 5 { colorCount = 5; color = color5; return color
+        } else if colorCount! == 6 { colorCount = 6; color = color6; return color
+        } else if colorCount! == 7 { colorCount = 7; color = color7; return color
+        } else if colorCount! == 8 { colorCount = 8; color = color8; return color
+        } else if colorCount! == 9 { colorCount = 9; color = color9; return color
+        } else { colorCount = 10; color = color10; return color
         }
     }
   
@@ -294,3 +294,37 @@ class CourseListViewController: SwipeTableViewController {
 
 }
 
+extension UIColor {
+    
+    func lighter(by percentage: CGFloat = 10.0) -> UIColor {
+        return self.adjust(by: abs(percentage))
+    }
+    
+    func darker(by percentage: CGFloat = 10.0) -> UIColor {
+        return self.adjust(by: -abs(percentage))
+    }
+    
+    func adjust(by percentage: CGFloat) -> UIColor {
+        var alpha, hue, saturation, brightness, red, green, blue, white : CGFloat
+        (alpha, hue, saturation, brightness, red, green, blue, white) = (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+        
+        let multiplier = percentage / 100.0
+        
+        if self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+            let newBrightness: CGFloat = max(min(brightness + multiplier*brightness, 1.0), 0.0)
+            return UIColor(hue: hue, saturation: saturation, brightness: newBrightness, alpha: alpha)
+        }
+        else if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
+            let newRed: CGFloat = min(max(red + multiplier*red, 0.0), 1.0)
+            let newGreen: CGFloat = min(max(green + multiplier*green, 0.0), 1.0)
+            let newBlue: CGFloat = min(max(blue + multiplier*blue, 0.0), 1.0)
+            return UIColor(red: newRed, green: newGreen, blue: newBlue, alpha: alpha)
+        }
+        else if self.getWhite(&white, alpha: &alpha) {
+            let newWhite: CGFloat = (white + multiplier*white)
+            return UIColor(white: newWhite, alpha: alpha)
+        }
+        
+        return self
+    }
+}
