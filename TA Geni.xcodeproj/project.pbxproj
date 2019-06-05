@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		241E5FF31CA0FCA26C68BCA5 /* Pods_TA_Geni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TA_Geni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F9D9700C53F3C66804D43B7 /* Pods-TA Geni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.debug.xcconfig"; path = "Target Support Files/Pods-TA Geni/Pods-TA Geni.debug.xcconfig"; sourceTree = "<group>"; };
+		3A87CB78D79604B7D6FB3FE4 /* Pods-TA Geni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.release.xcconfig"; path = "Target Support Files/Pods-TA Geni/Pods-TA Geni.release.xcconfig"; sourceTree = "<group>"; };
 		A41DEDB622277A1100A3EDC1 /* StudentListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListTableViewCell.swift; sourceTree = "<group>"; };
 		A41DEDBA2228BC4700A3EDC1 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudentListViewController.swift; path = "/Users/johnyoung/Desktop/TA Geni/TA Geni/Controllers/StudentListViewController.swift"; sourceTree = "<absolute>"; };
 		A42779262217559D004DE559 /* student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = student.swift; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		A463ED4B2217494A002984B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A463ED4D2217494A002984B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4CB7620229AEC5400CE6654 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
-		EB475DC6AAA3C5A95B50B1E8 /* Pods-TA Geni.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.release.xcconfig"; path = "Target Support Files/Pods-TA Geni/Pods-TA Geni.release.xcconfig"; sourceTree = "<group>"; };
+		CF7E4967024008A1523388B9 /* Pods-TA Geni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.debug.xcconfig"; path = "Target Support Files/Pods-TA Geni/Pods-TA Geni.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +141,8 @@
 		E3CBAC93CD31720EE7667A6C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4F9D9700C53F3C66804D43B7 /* Pods-TA Geni.debug.xcconfig */,
-				EB475DC6AAA3C5A95B50B1E8 /* Pods-TA Geni.release.xcconfig */,
+				CF7E4967024008A1523388B9 /* Pods-TA Geni.debug.xcconfig */,
+				3A87CB78D79604B7D6FB3FE4 /* Pods-TA Geni.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -421,7 +421,7 @@
 		};
 		A463ED512217494A002984B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F9D9700C53F3C66804D43B7 /* Pods-TA Geni.debug.xcconfig */;
+			baseConfigurationReference = CF7E4967024008A1523388B9 /* Pods-TA Geni.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -442,7 +442,7 @@
 		};
 		A463ED522217494A002984B7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB475DC6AAA3C5A95B50B1E8 /* Pods-TA Geni.release.xcconfig */;
+			baseConfigurationReference = 3A87CB78D79604B7D6FB3FE4 /* Pods-TA Geni.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
