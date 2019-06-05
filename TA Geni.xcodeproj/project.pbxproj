@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		234F921FDC47387F01914E7F /* Pods_TA_Geni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241E5FF31CA0FCA26C68BCA5 /* Pods_TA_Geni.framework */; };
 		A41DEDB722277A1100A3EDC1 /* StudentListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41DEDB622277A1100A3EDC1 /* StudentListTableViewCell.swift */; };
 		A41DEDBB2228BC4700A3EDC1 /* StudentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41DEDBA2228BC4700A3EDC1 /* StudentListViewController.swift */; };
 		A42779272217559D004DE559 /* student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42779262217559D004DE559 /* student.swift */; };
@@ -22,11 +21,13 @@
 		A463ED492217494A002984B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A463ED482217494A002984B7 /* Assets.xcassets */; };
 		A463ED4C2217494A002984B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A463ED4A2217494A002984B7 /* LaunchScreen.storyboard */; };
 		A4CB7621229AEC5400CE6654 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CB7620229AEC5400CE6654 /* SettingTableViewController.swift */; };
+		C9DC2428AD643023EC830ADF /* Pods_TA_Geni.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241E5FF31CA0FCA26C68BCA5 /* Pods_TA_Geni.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		241E5FF31CA0FCA26C68BCA5 /* Pods_TA_Geni.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TA_Geni.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9D9700C53F3C66804D43B7 /* Pods-TA Geni.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TA Geni.debug.xcconfig"; path = "Target Support Files/Pods-TA Geni/Pods-TA Geni.debug.xcconfig"; sourceTree = "<group>"; };
+		A4058F5B22A761E400316FDB /* Realm */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Realm; path = Pods/RealmSwift/Realm; sourceTree = "<group>"; };
 		A41DEDB622277A1100A3EDC1 /* StudentListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListTableViewCell.swift; sourceTree = "<group>"; };
 		A41DEDBA2228BC4700A3EDC1 /* StudentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudentListViewController.swift; path = "/Users/johnyoung/Desktop/TA Geni/TA Geni/Controllers/StudentListViewController.swift"; sourceTree = "<absolute>"; };
 		A42779262217559D004DE559 /* student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = student.swift; sourceTree = "<group>"; };
@@ -51,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				234F921FDC47387F01914E7F /* Pods_TA_Geni.framework in Frameworks */,
+				C9DC2428AD643023EC830ADF /* Pods_TA_Geni.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +62,7 @@
 		5DC6285D3553FEF5A4E08129 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A4058F5B22A761E400316FDB /* Realm */,
 				241E5FF31CA0FCA26C68BCA5 /* Pods_TA_Geni.framework */,
 			);
 			name = Frameworks;
@@ -222,22 +224,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TA Geni/Pods-TA Geni-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TA Geni/Pods-TA Geni-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TA Geni/Pods-TA Geni-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -360,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -416,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

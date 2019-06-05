@@ -4,7 +4,7 @@ target 'TA Geni' do
 
   use_frameworks!
 
-  # Pods for Todoey
+  # Pods for TA Geni
 
 pod 'RealmSwift'
 

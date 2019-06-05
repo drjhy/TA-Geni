@@ -7,18 +7,18 @@
 		<key>TA Geni 2.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
-		<key>TA Geni 4.xcscheme</key>
+		<key>TA Geni 4.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>TA Geni.xcscheme_^#shared#^_</key>
+		<key>TA Geni.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
